@@ -1,1 +1,2 @@
-Agent that treate data
+This project consists in a comparative study between different Multi agent orchestration frameworks, in the perspective of determining the strengths and weaknesses of each, and explore diffrent usecases.
+This is a Multi Agent System Designed to perform data Science manipulations from Data Cleaning and visualization, cleaning, preprocessing, and training predictive models, and providing full reports about for Data understanding and moldes performance
