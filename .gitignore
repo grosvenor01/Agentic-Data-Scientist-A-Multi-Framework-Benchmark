@@ -1,2 +1,9 @@
+# ingnores files
+agno_version/.env
+.env
+**/.env
 # ignoring virtual environnement content
 dsa/
+__pycache__/
+*.pyc
+agno_version/Data/
