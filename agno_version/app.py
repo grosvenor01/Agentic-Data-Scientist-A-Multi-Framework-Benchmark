@@ -10,4 +10,4 @@ response = MAS.run(
 )
 
 print(response.content)
-print(response.metrics.to_dict())
+print(response.metrics.to_dict()) # since i used the same model i will keep it like this and not by memeber
