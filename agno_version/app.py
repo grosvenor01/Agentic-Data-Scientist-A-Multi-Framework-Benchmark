@@ -4,11 +4,10 @@ from main.agents import analysis_agent
 user_query = input("actions needed : ")
 dataset_path = input("Dataset path : ")
 
-analysis_agent.print_response(
-    f"actions needed : {user_query} , dataset path : {dataset_path}", 
-    stream=True
-)
-"""MAS.print_response(
+
+response = MAS.run(
     f"actions needed : {user_query} , dataset path : {dataset_path}",
-    stream=True
-)"""
+)
+
+print(response.content)
+print(response.metrics.to_dict())

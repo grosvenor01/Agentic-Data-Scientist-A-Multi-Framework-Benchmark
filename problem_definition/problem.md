@@ -81,14 +81,11 @@ The system is composed of specialized agents:
 
 | Agent | Responsibility |
 |------|----------------|
-| **Planner** | Break task into steps |
 | **Data Loader** | Load and validate dataset |
 | **EDA Analyst** | Perform exploratory analysis |
 | **Preprocessing Agent** | Clean / transform data |
 | **Model Trainer** | Train ML models |
-| **Evaluator** | Compute and interpret metrics |
-| **Reporter** | Produce final report |
-
+| **Evaluator** | Compute and interpret metrics and produce a final report |
 Framework implementations may vary in orchestration strategy but must maintain equivalent logical roles.
 
 ---
