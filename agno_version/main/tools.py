@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
-# Analyste tools : 
+import sys, io , traceback
 
 def EDA(file_path:str , output_dir:str="figs/"):
     """
@@ -64,6 +64,38 @@ def EDA(file_path:str , output_dir:str="figs/"):
         return report
 analysis_tools = [EDA]
 
-preprocessing_tools = []
+import subprocess
+import traceback
+
+import subprocess
+import traceback
+
+def run_python_script(code: str) -> str:
+    filename = "excutables/code_to_run.py"
+
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(code)
+
+        result = subprocess.run(
+            [sys.executable, filename],
+            capture_output=True,
+            text=True
+        )
+
+        stdout = result.stdout.strip()
+        stderr = result.stderr.strip()
+
+        if result.returncode == 0:
+            return stdout or "Execution successful (no output)."
+
+        return f"Execution failed:\n{stderr}"
+
+    except Exception:
+        return f"Unexpected error:\n{traceback.format_exc()}"
+    
+preprocessing_tools = [run_python_script]
+
+
 training_tools = []
 evaluation_tools = []
