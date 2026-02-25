@@ -1,8 +1,11 @@
+#from agno.tools.
 from agno.tools import Toolkit
 from typing import List, Any
 
 # Data
 from sklearn.model_selection import train_test_split
+import joblib
+import pickle
 
 # Regressors
 import numpy as np
@@ -31,27 +34,12 @@ from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, silhouette_
 # Evaluation Metrics
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-def dataLoader(csv_path):
-    """Reads a CSV file and returns a pandas DataFrame"""
+def dataLoader(csv_path: str, target_col: str, test_size=0.2, random_state=42, shuffle=True):
+    """
+        This tool splits dataframe into X_train, y_train, x_test, y_test and saves them into npy files
+    """
+
     df = pd.read_csv(csv_path)
-    return df
-
-
-def dataToFeatures(df, target_col, test_size=0.2, random_state=42, shuffle=True):
-    """
-    Splits dataframe into train/test sets.
-    
-    Input:
-        df : pandas DataFrame
-        target_col : name of target column
-        test_size : proportion for test split
-        random_state : reproducibility
-        shuffle : whether to shuffle before split
-    
-    Output:
-        X_train, X_test, y_train, y_test (all numpy arrays)
-    """
-
     # Separate features and target
     X = df.drop(columns=[target_col])
     y = df[target_col]
@@ -67,8 +55,41 @@ def dataToFeatures(df, target_col, test_size=0.2, random_state=42, shuffle=True)
         random_state=random_state,
         shuffle=shuffle
     )
+    np.save("part/x_train.npy", X_train)
+    np.save("part/y_train.npy", y_train)
+    np.save("part/x_test.npy", X_test)
+    np.save("part/y_test.npy", y_test)
+    return "Splits saved in directory part/x_train.npy, part/y_train.npy, part/x_test.npy, part/y_test.npy"
 
-    return X_train, X_test, y_train, y_test
+
+
+def save_model_with_joblib(model_object: object, file_path: str) -> str:
+    """Save a trained model to disk using joblib.
+    
+    Args:
+        model_object: The trained model to save.
+        file_path: Path where the model should be saved (e.g., './output/model.pkl').
+    
+    Returns:
+        Confirmation message.
+    """
+    joblib.dump(model_object, file_path)
+    return f"Model saved successfully to {file_path}"
+
+
+def save_model_with_pickle(model_object: object, file_path: str) -> str:
+    """Save a trained model to disk using pickle.
+    
+    Args:
+        model_object: The trained model to save.
+        file_path: Path where the model should be saved (e.g., './output/model.pkl').
+    
+    Returns:
+        Confirmation message.
+    """
+    with open(file_path, "wb") as f:
+        pickle.dump(model_object, f)
+    return f"Model saved successfully to {file_path}"
 
 class MLTools(Toolkit):
     # Regression models
@@ -88,13 +109,17 @@ class MLTools(Toolkit):
 
         super().__init__(name="Regression_tools", tools=tools, instructions= "Use these tools to perform Machine learning tasks, such as Regression Analaysis, Classification, or clustering, chose the appropriate tool function to your use case based on the type of data you have and the user intents, for each ML model there are default haper parameters set, you can change them based on your specefic use case by passing the as arguments using the same parameters name.", **kwargs)
 
-    def performLinearRegression(x,y):
+    def performLinearRegression(x_train_path, y_train_path, model_output_path="output/linear_regression_model.pkl", history_output_path="output/linear_regression_history.pkl"):
         """ This function performs a Linear regression
-        Input: training data and target feautures
-        Output: Trained Linear regression model
+        Input: paths to training data and target features
+        Output: Trained Linear regression model saved to pkl file and training history
         
         """
-
+        import os
+        
+        # Load data from paths
+        x = np.load(x_train_path)
+        y = np.load(y_train_path)
         x = np.asarray(x)
         y = np.asarray(y).ravel()      # make y 1D
 
@@ -102,15 +127,31 @@ class MLTools(Toolkit):
             x = x.reshape(-1, 1)       # make x 2D if user passed a single feature
 
         model = LinearRegression()
-        model.fit(x,y)
-        return model
+        model.fit(x, y)
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {"model_type": "LinearRegression", "intercept": float(model.intercept_), "coefficients": model.coef_.tolist()}
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
 
-    def performPolynomialRegression(X, y, degree=2, include_bias=True):
+    def performPolynomialRegression(x_train_path, y_train_path, degree=2, include_bias=True, model_output_path="output/polynomial_regression_model.pkl", history_output_path="output/polynomial_regression_history.pkl"):
         """Performs Polynomial Regression (PolynomialFeatures + LinearRegression).
-        Input: training data X, target y, polynomial degree
-        Output: trained pipeline model
+        Input: paths to training data X, target y, polynomial degree
+        Output: trained pipeline model saved to pkl file and training history
         """
+        import os
+        
+        # Load data from paths
+        X = np.load(x_train_path)
+        y = np.load(y_train_path)
         X = np.asarray(X)
         y = np.asarray(y).ravel()      # make y 1D
 
@@ -122,13 +163,29 @@ class MLTools(Toolkit):
             LinearRegression()
         )
         model.fit(X, y)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {"model_type": "PolynomialRegression", "degree": degree, "include_bias": include_bias}
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
-    def performSVR(X, y, kernel="rbf", C=1.0, epsilon=0.1, gamma="scale"):
+    def performSVR(x_train_path, y_train_path, kernel="rbf", C=1.0, epsilon=0.1, gamma="scale", model_output_path="output/svr_model.pkl", history_output_path="output/svr_history.pkl"):
         """Performs Support Vector Regression (SVR).
-        Input: training data X, target y, SVR hyperparameters
-        Output: trained SVR pipeline model (with scaling)
+        Input: paths to training data X, target y, SVR hyperparameters
+        Output: trained SVR pipeline model (with scaling) saved to pkl file and training history
         """
+        import os
+        
+        # Load data from paths
+        X = np.load(x_train_path)
+        y = np.load(y_train_path)
         X = np.asarray(X)
         y = np.asarray(y).ravel()      # make y 1D
 
@@ -141,20 +198,38 @@ class MLTools(Toolkit):
             SVR(kernel=kernel, C=C, epsilon=epsilon, gamma=gamma)
         )
         model.fit(X, y)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {"model_type": "SVR", "kernel": kernel, "C": C, "epsilon": epsilon, "gamma": gamma}
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
     def performGradientBoostingRegression(
-        X, y,
+        x_train_path, y_train_path,
         n_estimators=200,
         learning_rate=0.1,
         max_depth=3,
         subsample=1.0,
-        random_state=42
+        random_state=42,
+        model_output_path="output/gradient_boosting_regression_model.pkl",
+        history_output_path="output/gradient_boosting_regression_history.pkl"
     ):
         """Performs Gradient Boosting Regression (sklearn).
-        Input: training data X, target y, GBR hyperparameters
-        Output: trained GradientBoostingRegressor model
+        Input: paths to training data X, target y, GBR hyperparameters
+        Output: trained GradientBoostingRegressor model saved to pkl file and training history
         """
+        import os
+        
+        # Load data from paths
+        X = np.load(x_train_path)
+        y = np.load(y_train_path)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -169,32 +244,70 @@ class MLTools(Toolkit):
             random_state=random_state
         )
         model.fit(X, y)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {
+            "model_type": "GradientBoostingRegressor",
+            "n_estimators": n_estimators,
+            "learning_rate": learning_rate,
+            "max_depth": max_depth,
+            "subsample": subsample,
+            "train_score": float(model.train_score_[-1]) if hasattr(model, 'train_score_') else None
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
 
 
     # Classification models
 
     def performRandomForestClassification(
-        X, y,
+        self,
+        x_train_path: str,
+        y_train_path: str,
+        x_test_path: str = None,
+        y_test_path: str = None,
         n_estimators=200,
         max_depth=None,
         min_samples_split=2,
         min_samples_leaf=1,
         max_features="sqrt",
         class_weight=None,
-        random_state=42
+        random_state=42,
+        model_output_path="output/random_forest_classification_model.joblib",
+        history_output_path="output/random_forest_classification_history.json"
     ):
         """Performs Random Forest Classification.
-        Input: training data X, target y, RandomForest hyperparameters
-        Output: trained RandomForestClassifier model
+        Loads X/y from .npy paths, trains a RandomForestClassifier, saves model with joblib,
+        saves training metadata ("history"), and returns a score.
+
+        If x_test_path and y_test_path are provided: score is computed on test data.
+        Otherwise: score is computed on training data.
         """
-        X = np.asarray(X)
-        y = np.asarray(y).ravel()  # make y 1D
+        import os
+        import json
+        import numpy as np
+        import joblib
+        from sklearn.ensemble import RandomForestClassifier
 
-        if X.ndim == 1:
-            X = X.reshape(-1, 1)   # make X 2D if single feature
+        # ---- Load train data ----
+        X_train = np.load(x_train_path)
+        y_train = np.load(y_train_path, allow_pickle=True)
 
+        X_train = np.asarray(X_train)
+        y_train = np.asarray(y_train).ravel()  # make y 1D
+
+        if X_train.ndim == 1:
+            X_train = X_train.reshape(-1, 1)   # make X 2D if single feature
+
+        # ---- Model ----
         model = RandomForestClassifier(
             n_estimators=n_estimators,
             max_depth=max_depth,
@@ -205,21 +318,75 @@ class MLTools(Toolkit):
             random_state=random_state,
             n_jobs=-1
         )
-        model.fit(X, y)
-        return model
+
+        model.fit(X_train, y_train)
+
+        # ---- Choose evaluation set ----
+        if x_test_path is not None and y_test_path is not None:
+            X_eval = np.load(x_test_path)
+            y_eval = np.load(y_test_path, allow_pickle=True)
+
+            X_eval = np.asarray(X_eval)
+            y_eval = np.asarray(y_eval).ravel()
+
+            if X_eval.ndim == 1:
+                X_eval = X_eval.reshape(-1, 1)
+
+            score = float(model.score(X_eval, y_eval))  # accuracy for classification
+            score_on = "test"
+        else:
+            score = float(model.score(X_train, y_train))
+            score_on = "train"
+
+        # ---- Save model (joblib) ----
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        joblib.dump(model, model_output_path)
+
+        # ---- Save "history" (metadata) ----
+        history = {
+            "model_type": "RandomForestClassifier",
+            "score": score,
+            "score_on": score_on,
+            "params": {
+                "n_estimators": n_estimators,
+                "max_depth": max_depth,
+                "min_samples_split": min_samples_split,
+                "min_samples_leaf": min_samples_leaf,
+                "max_features": max_features,
+                "class_weight": class_weight,
+                "random_state": random_state
+            }
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=2)
+
+        return {
+            "model_path": model_output_path,
+            "history_path": history_output_path,
+            "score": score,
+            "score_on": score_on
+        }
 
     def performGradientBoostingClassification(
-        X, y,
+        x_train_path, y_train_path,
         n_estimators=200,
         learning_rate=0.1,
         max_depth=3,
         subsample=1.0,
-        random_state=42
+        random_state=42,
+        model_output_path="output/gradient_boosting_classification_model.pkl",
+        history_output_path="output/gradient_boosting_classification_history.pkl"
     ):
         """Performs Gradient Boosting Classification (sklearn).
-        Input: training data X, target y, GBC hyperparameters
-        Output: trained GradientBoostingClassifier model
+        Input: paths to training data X, target y, GBC hyperparameters
+        Output: trained GradientBoostingClassifier model saved to pkl file and training history
         """
+        import os
+        
+        # Load data from paths
+        X = np.load(x_train_path)
+        y = np.load(y_train_path)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -234,22 +401,47 @@ class MLTools(Toolkit):
             random_state=random_state
         )
         model.fit(X, y)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {
+            "model_type": "GradientBoostingClassifier",
+            "n_estimators": n_estimators,
+            "learning_rate": learning_rate,
+            "max_depth": max_depth,
+            "subsample": subsample,
+            "train_score": float(model.train_score_[-1]) if hasattr(model, 'train_score_') else None
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
 
     def performLogisticRegressionClassification(
-        X, y,
+        x_train_path, y_train_path,
         penalty="l2",
         C=1.0,
         solver="lbfgs",
         max_iter=1000,
         class_weight=None,
-        random_state=42
+        random_state=42,
+        model_output_path="output/logistic_regression_classification_model.pkl",
+        history_output_path="output/logistic_regression_classification_history.pkl"
     ):
         """Performs Logistic Regression Classification.
-        Input: training data X, target y, LogisticRegression hyperparameters
-        Output: trained LogisticRegression pipeline model (with scaling)
+        Input: paths to training data X, target y, LogisticRegression hyperparameters
+        Output: trained LogisticRegression pipeline model (with scaling) saved to pkl file and training history
         """
+        import os
+        
+        # Load data from paths
+        X = np.load(x_train_path)
+        y = np.load(y_train_path)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -269,26 +461,50 @@ class MLTools(Toolkit):
             )
         )
         model.fit(X, y)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {
+            "model_type": "LogisticRegression",
+            "penalty": penalty,
+            "C": C,
+            "solver": solver,
+            "max_iter": max_iter
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
     import numpy as np
     from sklearn.pipeline import make_pipeline
     from sklearn.preprocessing import StandardScaler
 
     def performSVMClassification(
-        X, y,
+        x_train_path, y_train_path,
         kernel="rbf",
         C=1.0,
         gamma="scale",
         degree=3,
         probability=True,
         class_weight=None,
-        random_state=42
+        random_state=42,
+        model_output_path="output/svm_classification_model.pkl",
+        history_output_path="output/svm_classification_history.pkl"
     ):
         """Performs SVM Classification (SVC).
-        Input: training data X, target y, SVM hyperparameters
-        Output: trained SVM pipeline model (with scaling)
+        Input: paths to training data X, target y, SVM hyperparameters
+        Output: trained SVM pipeline model (with scaling) saved to pkl file and training history
         """
+        import os
+        
+        # Load data from paths
+        X = np.load(x_train_path)
+        y = np.load(y_train_path)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -308,19 +524,44 @@ class MLTools(Toolkit):
             )
         )
         model.fit(X, y)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {
+            "model_type": "SVC",
+            "kernel": kernel,
+            "C": C,
+            "gamma": gamma,
+            "degree": degree,
+            "probability": probability
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
     
     def performKNNClassification(
-        X, y,
+        x_train_path, y_train_path,
         n_neighbors=5,
         weights="uniform",
         algorithm="auto",
-        p=2
+        p=2,
+        model_output_path="output/knn_classification_model.pkl",
+        history_output_path="output/knn_classification_history.pkl"
     ):
         """Performs K-Nearest Neighbors Classification.
-        Input: training data X, target y, KNN hyperparameters
-        Output: trained KNN pipeline model (with scaling)
+        Input: paths to training data X, target y, KNN hyperparameters
+        Output: trained KNN pipeline model (with scaling) saved to pkl file and training history
         """
+        import os
+        
+        # Load data from paths
+        X = np.load(x_train_path)
+        y = np.load(y_train_path)
         X = np.asarray(X)
         y = np.asarray(y).ravel()
 
@@ -339,20 +580,43 @@ class MLTools(Toolkit):
         )
 
         model.fit(X, y)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        history = {
+            "model_type": "KNeighborsClassifier",
+            "n_neighbors": n_neighbors,
+            "weights": weights,
+            "algorithm": algorithm,
+            "p": p
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
     # Clustering 
     def performKMeansClustering(
-        X,
+        x_train_path,
         n_clusters=3,
         init="k-means++",
         max_iter=300,
-        random_state=42
+        random_state=42,
+        model_output_path="output/kmeans_clustering_model.pkl",
+        history_output_path="output/kmeans_clustering_history.pkl"
     ):
         """Performs K-Means Clustering.
-        Input: data X, Kmeans hyperparameters
-        Output: trained KMeans pipeline model (with scaling)
+        Input: path to data X, Kmeans hyperparameters
+        Output: trained KMeans pipeline model (with scaling) saved to pkl file and training history
         """
+        import os
+        
+        # Load data from path
+        X = np.load(x_train_path)
         X = np.asarray(X)
 
         if X.ndim == 1:
@@ -370,18 +634,43 @@ class MLTools(Toolkit):
         )
 
         model.fit(X)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        kmeans_est = model.named_steps['kmeans']
+        history = {
+            "model_type": "KMeans",
+            "n_clusters": n_clusters,
+            "init": init,
+            "max_iter": max_iter,
+            "inertia": float(kmeans_est.inertia_) if hasattr(kmeans_est, 'inertia_') else None,
+            "n_iter": int(kmeans_est.n_iter_) if hasattr(kmeans_est, 'n_iter_') else None
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
     
 
     def performPCA(
-        X,
+        x_train_path,
         n_components=2,
-        random_state=42
+        random_state=42,
+        model_output_path="output/pca_model.pkl",
+        history_output_path="output/pca_history.pkl"
     ):
         """Performs Principal Component Analysis (PCA).
-        Input: data X
-        Output: trained PCA pipeline model (with scaling)
+        Input: path to data X
+        Output: trained PCA pipeline model (with scaling) saved to pkl file and training history
         """
+        import os
+        
+        # Load data from path
+        X = np.load(x_train_path)
         X = np.asarray(X)
 
         if X.ndim == 1:
@@ -396,7 +685,24 @@ class MLTools(Toolkit):
         )
 
         model.fit(X)
-        return model
+        
+        # Save model
+        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
+        save_model_with_joblib(model, model_output_path)
+        
+        # Create and save training history
+        pca_est = model.named_steps['pca']
+        history = {
+            "model_type": "PCA",
+            "n_components": n_components,
+            "explained_variance_ratio": pca_est.explained_variance_ratio_.tolist() if hasattr(pca_est, 'explained_variance_ratio_') else None,
+            "total_variance_explained": float(np.sum(pca_est.explained_variance_ratio_)) if hasattr(pca_est, 'explained_variance_ratio_') else None
+        }
+        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
+        with open(history_output_path, "wb") as f:
+            pickle.dump(history, f)
+        
+        return f"Model saved to {model_output_path} and history saved to {history_output_path}"
 
 
 
