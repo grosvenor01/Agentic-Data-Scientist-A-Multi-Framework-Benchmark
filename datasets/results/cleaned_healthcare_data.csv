@@ -1,1001 +1,1001 @@
-Age,Gender,Condition,Medication,Cholesterol,Systolic BP
-25.0,Other,Heart Disease,METFORMIN,200.0,140.0
-,Male,Diabetes,NONE,200.0,120.0
-35.0,Other,Asthma,METFORMIN,160.0,110.0
-,Male,Diabetes,ALBUTEROL,,110.0
-,Female,Asthma,NONE,180.0,110.0
-,Male,Hypertension,METFORMIN,180.0,140.0
-,Male,Hypertension,LISINOPRIL,,120.0
-60.0,Other,,NONE,,
-60.0,Other,Heart Disease,NONE,180.0,140.0
-,Female,,ALBUTEROL,220.0,140.0
-25.0,Male,Asthma,ATORVASTATIN,200.0,120.0
-,Male,,ATORVASTATIN,200.0,130.0
-,Male,Diabetes,ALBUTEROL,180.0,140.0
-25.0,Female,Asthma,ALBUTEROL,,130.0
-70.0,Female,Hypertension,ALBUTEROL,220.0,130.0
-35.0,Female,Heart Disease,ATORVASTATIN,180.0,110.0
-60.0,Female,Asthma,ALBUTEROL,200.0,120.0
-70.0,Female,Asthma,METFORMIN,160.0,130.0
-25.0,Other,Diabetes,NONE,,120.0
-70.0,Male,Heart Disease,NONE,160.0,110.0
-35.0,Male,Hypertension,LISINOPRIL,180.0,120.0
-25.0,Male,Asthma,LISINOPRIL,200.0,140.0
-70.0,Male,Asthma,NONE,220.0,130.0
-60.0,Male,Diabetes,METFORMIN,160.0,120.0
-60.0,Male,,ATORVASTATIN,220.0,
-,Male,Hypertension,ATORVASTATIN,200.0,120.0
-70.0,Male,Heart Disease,METFORMIN,160.0,130.0
-,Other,Asthma,ATORVASTATIN,220.0,110.0
-70.0,Male,Asthma,ALBUTEROL,220.0,110.0
-25.0,Other,Hypertension,NONE,160.0,130.0
-25.0,Female,,NONE,200.0,140.0
-70.0,Male,Asthma,METFORMIN,220.0,140.0
-35.0,Female,Hypertension,ATORVASTATIN,180.0,110.0
-60.0,Female,Diabetes,LISINOPRIL,160.0,110.0
-25.0,Female,,LISINOPRIL,,130.0
-60.0,Other,Heart Disease,ATORVASTATIN,,140.0
-25.0,Female,Asthma,LISINOPRIL,200.0,110.0
-,Female,Hypertension,METFORMIN,180.0,140.0
-,Female,Diabetes,METFORMIN,220.0,110.0
-25.0,Male,Heart Disease,ATORVASTATIN,,120.0
-60.0,Male,Hypertension,LISINOPRIL,200.0,
-,Other,Hypertension,METFORMIN,180.0,120.0
-25.0,Other,Heart Disease,METFORMIN,180.0,110.0
-35.0,Male,Diabetes,ALBUTEROL,200.0,
-,Other,Diabetes,ALBUTEROL,200.0,
-25.0,Male,,METFORMIN,220.0,110.0
-,Female,Asthma,ATORVASTATIN,200.0,110.0
-35.0,Female,Heart Disease,NONE,220.0,140.0
-70.0,Other,Heart Disease,NONE,220.0,110.0
-,Male,Heart Disease,METFORMIN,160.0,130.0
-,Male,Diabetes,METFORMIN,180.0,110.0
-35.0,Other,Asthma,METFORMIN,180.0,130.0
-,Male,,ATORVASTATIN,180.0,110.0
-35.0,Female,Hypertension,ALBUTEROL,160.0,140.0
-25.0,Other,Hypertension,METFORMIN,220.0,130.0
-35.0,Other,Heart Disease,METFORMIN,220.0,120.0
-35.0,Male,Asthma,LISINOPRIL,200.0,130.0
-,Other,Diabetes,ATORVASTATIN,160.0,140.0
-35.0,Male,Asthma,METFORMIN,200.0,130.0
-35.0,Male,Asthma,LISINOPRIL,160.0,110.0
-70.0,Male,Diabetes,NONE,200.0,110.0
-25.0,Male,Heart Disease,METFORMIN,,140.0
-,Male,Asthma,METFORMIN,180.0,
-70.0,Other,Hypertension,LISINOPRIL,180.0,110.0
-60.0,Female,Diabetes,ATORVASTATIN,220.0,120.0
-25.0,Female,,METFORMIN,,140.0
-25.0,Other,Heart Disease,NONE,180.0,130.0
-60.0,Other,Diabetes,METFORMIN,220.0,130.0
-35.0,Female,,NONE,,120.0
-70.0,Female,,ALBUTEROL,180.0,110.0
-,Female,Asthma,ALBUTEROL,200.0,140.0
-,Female,Asthma,NONE,160.0,120.0
-,Female,Asthma,ATORVASTATIN,,110.0
-60.0,Male,Diabetes,METFORMIN,220.0,140.0
-25.0,Other,Diabetes,METFORMIN,,130.0
-25.0,Male,Heart Disease,ALBUTEROL,220.0,140.0
-,Female,Asthma,NONE,,
-25.0,Female,,METFORMIN,220.0,140.0
-25.0,Female,Hypertension,METFORMIN,180.0,
-,Male,Heart Disease,ATORVASTATIN,200.0,140.0
-70.0,Male,Diabetes,LISINOPRIL,180.0,
-70.0,Female,Heart Disease,ALBUTEROL,200.0,130.0
-,Male,Heart Disease,ALBUTEROL,180.0,110.0
-60.0,Male,Heart Disease,LISINOPRIL,180.0,
-25.0,Female,Heart Disease,METFORMIN,,
-25.0,Male,Hypertension,ATORVASTATIN,160.0,130.0
-60.0,Other,Asthma,ATORVASTATIN,220.0,
-70.0,Other,,ALBUTEROL,220.0,120.0
-35.0,Other,Heart Disease,ATORVASTATIN,220.0,130.0
-35.0,Other,Heart Disease,LISINOPRIL,200.0,120.0
-35.0,Female,Heart Disease,METFORMIN,220.0,130.0
-70.0,Female,Asthma,LISINOPRIL,220.0,
-70.0,Female,Diabetes,NONE,,120.0
-60.0,Other,Diabetes,ALBUTEROL,180.0,
-25.0,Other,Hypertension,ATORVASTATIN,220.0,130.0
-60.0,Male,Diabetes,NONE,160.0,
-60.0,Male,Heart Disease,ATORVASTATIN,220.0,120.0
-70.0,Other,Heart Disease,METFORMIN,200.0,120.0
-35.0,Other,Heart Disease,METFORMIN,200.0,
-,Other,Hypertension,METFORMIN,200.0,140.0
-25.0,Other,Heart Disease,ATORVASTATIN,220.0,130.0
-70.0,Male,Diabetes,NONE,,130.0
-35.0,Other,Asthma,METFORMIN,160.0,
-,Male,Asthma,NONE,220.0,140.0
-,Other,,ATORVASTATIN,,120.0
-70.0,Other,Diabetes,NONE,,110.0
-,Other,Heart Disease,ATORVASTATIN,220.0,110.0
-25.0,Male,Asthma,ATORVASTATIN,220.0,
-,Male,Diabetes,ALBUTEROL,,140.0
-70.0,Female,Asthma,ATORVASTATIN,,140.0
-70.0,Other,Heart Disease,ATORVASTATIN,,130.0
-35.0,Female,Asthma,LISINOPRIL,220.0,120.0
-,Female,,METFORMIN,,140.0
-25.0,Male,,ALBUTEROL,200.0,110.0
-60.0,Male,Asthma,ALBUTEROL,220.0,120.0
-35.0,Female,Diabetes,ALBUTEROL,200.0,120.0
-,Other,Diabetes,LISINOPRIL,180.0,
-,Male,Diabetes,ATORVASTATIN,220.0,140.0
-35.0,Other,Asthma,METFORMIN,180.0,
-70.0,Other,Diabetes,NONE,,140.0
-,Female,Heart Disease,ATORVASTATIN,,130.0
-,Female,,LISINOPRIL,160.0,
-25.0,Female,Heart Disease,ATORVASTATIN,,
-,Female,Diabetes,ATORVASTATIN,180.0,110.0
-,Male,Heart Disease,LISINOPRIL,,
-60.0,Male,Diabetes,ALBUTEROL,220.0,140.0
-25.0,Female,Asthma,ALBUTEROL,,110.0
-25.0,Male,Heart Disease,METFORMIN,160.0,
-35.0,Female,Asthma,METFORMIN,,
-35.0,Other,Asthma,ALBUTEROL,180.0,130.0
-60.0,Other,Hypertension,NONE,180.0,
-70.0,Other,Diabetes,ATORVASTATIN,,120.0
-25.0,Female,,NONE,180.0,110.0
-60.0,Other,Diabetes,ATORVASTATIN,180.0,120.0
-35.0,Male,,ALBUTEROL,160.0,110.0
-35.0,Other,Diabetes,METFORMIN,220.0,130.0
-25.0,Other,Asthma,METFORMIN,160.0,
-,Other,Heart Disease,NONE,200.0,
-,Male,Heart Disease,METFORMIN,160.0,
-35.0,Female,Hypertension,ALBUTEROL,,110.0
-70.0,Male,,NONE,220.0,
-70.0,Female,,ATORVASTATIN,,120.0
-35.0,Female,,METFORMIN,200.0,
-,Other,Asthma,LISINOPRIL,220.0,130.0
-,Female,,METFORMIN,180.0,120.0
-60.0,Male,Heart Disease,ATORVASTATIN,160.0,
-70.0,Male,Asthma,NONE,,
-60.0,Female,Diabetes,ATORVASTATIN,200.0,140.0
-70.0,Other,,LISINOPRIL,180.0,110.0
-,Other,,ALBUTEROL,160.0,120.0
-,Male,Diabetes,METFORMIN,180.0,140.0
-25.0,Other,,NONE,160.0,130.0
-60.0,Female,Diabetes,ALBUTEROL,220.0,110.0
-35.0,Female,Asthma,ATORVASTATIN,180.0,120.0
-60.0,Male,Heart Disease,NONE,180.0,
-35.0,Female,Diabetes,ALBUTEROL,180.0,120.0
-,Male,Hypertension,NONE,220.0,
-60.0,Female,Diabetes,LISINOPRIL,200.0,110.0
-,Male,,LISINOPRIL,160.0,
-,Other,Asthma,METFORMIN,180.0,130.0
-,Female,Asthma,METFORMIN,220.0,
-25.0,Female,Diabetes,LISINOPRIL,200.0,130.0
-60.0,Male,Heart Disease,NONE,160.0,110.0
-,Male,Hypertension,LISINOPRIL,220.0,110.0
-35.0,Female,Asthma,METFORMIN,160.0,120.0
-,Male,,LISINOPRIL,180.0,130.0
-,Female,,LISINOPRIL,200.0,130.0
-35.0,Other,Heart Disease,NONE,220.0,140.0
-,Male,Asthma,ALBUTEROL,200.0,140.0
-,Female,Diabetes,METFORMIN,180.0,140.0
-60.0,Other,,NONE,200.0,
-60.0,Other,Heart Disease,LISINOPRIL,200.0,140.0
-70.0,Female,Asthma,LISINOPRIL,,130.0
-70.0,Male,Asthma,ALBUTEROL,200.0,
-25.0,Female,Asthma,METFORMIN,160.0,110.0
-,Other,Asthma,METFORMIN,220.0,120.0
-60.0,Female,Asthma,ATORVASTATIN,,140.0
-,Male,,METFORMIN,220.0,110.0
-35.0,Other,Heart Disease,ALBUTEROL,220.0,130.0
-,Female,Asthma,ATORVASTATIN,180.0,120.0
-,Male,Hypertension,ATORVASTATIN,180.0,110.0
-70.0,Other,Hypertension,LISINOPRIL,,120.0
-,Male,Heart Disease,LISINOPRIL,180.0,140.0
-25.0,Other,Diabetes,METFORMIN,180.0,130.0
-,Female,Diabetes,ATORVASTATIN,180.0,120.0
-70.0,Male,Diabetes,LISINOPRIL,220.0,110.0
-35.0,Other,Hypertension,ALBUTEROL,,140.0
-70.0,Male,Diabetes,LISINOPRIL,220.0,140.0
-25.0,Male,,LISINOPRIL,160.0,110.0
-,Female,Asthma,ATORVASTATIN,220.0,110.0
-35.0,Male,Hypertension,ATORVASTATIN,160.0,120.0
-25.0,Other,Heart Disease,NONE,200.0,
-70.0,Other,Heart Disease,ALBUTEROL,200.0,140.0
-25.0,Other,Asthma,ATORVASTATIN,160.0,120.0
-,Other,Hypertension,METFORMIN,160.0,110.0
-60.0,Female,Diabetes,ALBUTEROL,220.0,120.0
-25.0,Male,Diabetes,ALBUTEROL,160.0,110.0
-25.0,Female,,ATORVASTATIN,,130.0
-70.0,Male,,ALBUTEROL,200.0,110.0
-70.0,Male,Diabetes,ATORVASTATIN,200.0,110.0
-35.0,Male,Heart Disease,LISINOPRIL,160.0,110.0
-70.0,Female,Heart Disease,NONE,180.0,
-,Male,,LISINOPRIL,180.0,110.0
-,Female,Asthma,ATORVASTATIN,160.0,140.0
-,Other,Diabetes,ATORVASTATIN,,140.0
-60.0,Other,,LISINOPRIL,180.0,120.0
-60.0,Male,,METFORMIN,160.0,
-,Female,Diabetes,METFORMIN,,120.0
-60.0,Other,Diabetes,METFORMIN,,140.0
-35.0,Female,Heart Disease,ATORVASTATIN,220.0,140.0
-70.0,Female,Asthma,ALBUTEROL,,130.0
-,Male,Asthma,ATORVASTATIN,180.0,110.0
-60.0,Other,Diabetes,ALBUTEROL,180.0,140.0
-,Male,Hypertension,LISINOPRIL,160.0,120.0
-,Male,,NONE,160.0,120.0
-25.0,Other,,ALBUTEROL,,110.0
-70.0,Other,Diabetes,METFORMIN,200.0,110.0
-,Female,Hypertension,ATORVASTATIN,220.0,130.0
-25.0,Other,Heart Disease,LISINOPRIL,200.0,
-60.0,Female,Diabetes,METFORMIN,,120.0
-25.0,Female,Diabetes,LISINOPRIL,,110.0
-70.0,Female,,NONE,200.0,120.0
-,Other,Diabetes,ATORVASTATIN,220.0,110.0
-,Male,Diabetes,ATORVASTATIN,200.0,140.0
-60.0,Female,Diabetes,NONE,160.0,120.0
-,Male,,ATORVASTATIN,180.0,140.0
-70.0,Male,Heart Disease,ALBUTEROL,160.0,120.0
-60.0,Other,Heart Disease,LISINOPRIL,180.0,
-35.0,Male,Diabetes,METFORMIN,,130.0
-25.0,Male,,NONE,220.0,140.0
-70.0,Other,Heart Disease,ALBUTEROL,200.0,110.0
-35.0,Female,Heart Disease,METFORMIN,220.0,
-,Male,Heart Disease,METFORMIN,200.0,120.0
-,Other,,NONE,160.0,140.0
-60.0,Male,,ALBUTEROL,160.0,120.0
-25.0,Male,Diabetes,METFORMIN,200.0,120.0
-60.0,Female,Asthma,METFORMIN,220.0,120.0
-,Male,Heart Disease,ALBUTEROL,200.0,130.0
-60.0,Other,Asthma,ATORVASTATIN,,130.0
-25.0,Male,,METFORMIN,160.0,110.0
-,Female,,LISINOPRIL,,140.0
-60.0,Female,,ALBUTEROL,160.0,
-,Other,Asthma,METFORMIN,160.0,
-70.0,Female,,NONE,180.0,
-,Male,Diabetes,LISINOPRIL,,120.0
-70.0,Female,,METFORMIN,,130.0
-,Other,Hypertension,LISINOPRIL,180.0,140.0
-,Female,Asthma,LISINOPRIL,220.0,120.0
-70.0,Female,Hypertension,ATORVASTATIN,,130.0
-35.0,Female,,LISINOPRIL,200.0,130.0
-25.0,Other,Diabetes,ATORVASTATIN,180.0,140.0
-35.0,Female,Heart Disease,ALBUTEROL,,140.0
-60.0,Female,,ATORVASTATIN,220.0,140.0
-,Male,Diabetes,NONE,,120.0
-35.0,Other,Asthma,METFORMIN,160.0,110.0
-,Female,Hypertension,ALBUTEROL,200.0,140.0
-60.0,Other,Hypertension,ALBUTEROL,180.0,110.0
-60.0,Female,Hypertension,NONE,160.0,120.0
-35.0,Female,Asthma,ATORVASTATIN,220.0,110.0
-35.0,Female,Diabetes,METFORMIN,160.0,
-,Male,Asthma,ATORVASTATIN,160.0,110.0
-25.0,Male,Hypertension,LISINOPRIL,220.0,140.0
-35.0,Male,,ATORVASTATIN,160.0,120.0
-35.0,Other,Heart Disease,ALBUTEROL,180.0,140.0
-70.0,Other,Asthma,METFORMIN,,
-,Male,Asthma,ATORVASTATIN,160.0,140.0
-70.0,Other,Diabetes,METFORMIN,180.0,140.0
-70.0,Female,Diabetes,METFORMIN,,140.0
-60.0,Female,Asthma,LISINOPRIL,,130.0
-25.0,Female,Hypertension,LISINOPRIL,160.0,
-,Male,Heart Disease,ALBUTEROL,180.0,140.0
-,Other,Diabetes,NONE,160.0,140.0
-,Male,Hypertension,METFORMIN,220.0,140.0
-35.0,Other,,NONE,,120.0
-35.0,Female,Diabetes,ALBUTEROL,160.0,130.0
-,Male,Hypertension,METFORMIN,,120.0
-35.0,Other,Hypertension,METFORMIN,180.0,130.0
-25.0,Other,Heart Disease,NONE,200.0,140.0
-70.0,Female,Heart Disease,ATORVASTATIN,160.0,
-35.0,Male,,LISINOPRIL,160.0,110.0
-60.0,Male,Hypertension,ATORVASTATIN,,110.0
-35.0,Male,Hypertension,NONE,180.0,140.0
-,Female,Heart Disease,LISINOPRIL,220.0,120.0
-25.0,Male,Diabetes,ATORVASTATIN,180.0,
-,Female,Diabetes,LISINOPRIL,160.0,130.0
-,Female,Asthma,METFORMIN,220.0,140.0
-60.0,Female,Heart Disease,ATORVASTATIN,180.0,
-25.0,Other,Asthma,LISINOPRIL,200.0,
-25.0,Male,Heart Disease,LISINOPRIL,,130.0
-25.0,Male,,LISINOPRIL,180.0,
-25.0,Female,Hypertension,ATORVASTATIN,180.0,120.0
-25.0,Female,,ALBUTEROL,200.0,120.0
-60.0,Male,Heart Disease,ATORVASTATIN,160.0,120.0
-35.0,Female,Hypertension,NONE,,
-,Male,Diabetes,ATORVASTATIN,180.0,120.0
-25.0,Other,Diabetes,LISINOPRIL,220.0,130.0
-35.0,Female,Asthma,METFORMIN,180.0,
-35.0,Male,Heart Disease,ATORVASTATIN,,110.0
-,Female,Heart Disease,ATORVASTATIN,180.0,
-60.0,Male,Diabetes,LISINOPRIL,200.0,130.0
-,Male,,METFORMIN,180.0,110.0
-,Female,Hypertension,METFORMIN,180.0,
-35.0,Other,,NONE,220.0,120.0
-70.0,Male,,ATORVASTATIN,200.0,140.0
-70.0,Male,Diabetes,METFORMIN,200.0,140.0
-,Male,Diabetes,METFORMIN,180.0,120.0
-,Other,Diabetes,ALBUTEROL,220.0,140.0
-35.0,Other,Asthma,ALBUTEROL,180.0,140.0
-60.0,Female,,METFORMIN,180.0,120.0
-,Other,Heart Disease,NONE,,120.0
-35.0,Female,Hypertension,METFORMIN,,
-35.0,Female,Asthma,LISINOPRIL,220.0,
-25.0,Other,Heart Disease,ATORVASTATIN,160.0,120.0
-60.0,Female,,NONE,,130.0
-25.0,Other,Diabetes,LISINOPRIL,160.0,140.0
-,Female,,NONE,200.0,
-25.0,Other,Hypertension,LISINOPRIL,,140.0
-25.0,Other,Asthma,ATORVASTATIN,,110.0
-,Female,Asthma,ATORVASTATIN,220.0,120.0
-70.0,Male,Hypertension,ALBUTEROL,160.0,130.0
-35.0,Female,Heart Disease,LISINOPRIL,,110.0
-60.0,Other,Heart Disease,ALBUTEROL,,110.0
-25.0,Male,Asthma,LISINOPRIL,220.0,110.0
-60.0,Female,Asthma,ALBUTEROL,220.0,120.0
-70.0,Female,Diabetes,ATORVASTATIN,160.0,
-70.0,Female,Heart Disease,NONE,200.0,120.0
-25.0,Male,Hypertension,ALBUTEROL,200.0,
-,Other,Heart Disease,LISINOPRIL,180.0,110.0
-25.0,Female,Diabetes,LISINOPRIL,,110.0
-,Female,Asthma,ATORVASTATIN,160.0,130.0
-35.0,Female,Asthma,LISINOPRIL,,
-,Female,Diabetes,METFORMIN,160.0,110.0
-25.0,Female,Hypertension,NONE,160.0,140.0
-60.0,Other,Asthma,ALBUTEROL,160.0,130.0
-,Other,,NONE,,120.0
-,Female,Asthma,ATORVASTATIN,220.0,130.0
-25.0,Male,,ALBUTEROL,,140.0
-,Other,Diabetes,ALBUTEROL,160.0,
-60.0,Male,Diabetes,METFORMIN,180.0,120.0
-70.0,Other,Asthma,ATORVASTATIN,200.0,120.0
-,Female,Heart Disease,LISINOPRIL,160.0,
-70.0,Other,,METFORMIN,180.0,130.0
-60.0,Female,Hypertension,METFORMIN,220.0,110.0
-25.0,Other,Asthma,NONE,160.0,130.0
-35.0,Female,Hypertension,NONE,180.0,140.0
-,Female,Asthma,NONE,160.0,110.0
-35.0,Female,Heart Disease,METFORMIN,,130.0
-60.0,Female,Heart Disease,LISINOPRIL,180.0,
-,Male,Heart Disease,ALBUTEROL,,140.0
-70.0,Female,Heart Disease,NONE,,140.0
-,Male,Diabetes,LISINOPRIL,180.0,140.0
-35.0,Male,Diabetes,ATORVASTATIN,200.0,110.0
-,Female,,NONE,180.0,120.0
-35.0,Male,Hypertension,ALBUTEROL,200.0,110.0
-,Other,Asthma,ATORVASTATIN,160.0,130.0
-25.0,Female,Asthma,ATORVASTATIN,160.0,120.0
-70.0,Male,Diabetes,ALBUTEROL,180.0,130.0
-35.0,Female,Asthma,NONE,160.0,120.0
-,Female,Diabetes,METFORMIN,220.0,110.0
-,Female,,ALBUTEROL,,140.0
-60.0,Male,Hypertension,ALBUTEROL,,
-,Other,,ALBUTEROL,200.0,140.0
-35.0,Other,Heart Disease,ATORVASTATIN,160.0,110.0
-60.0,Male,Heart Disease,LISINOPRIL,200.0,120.0
-35.0,Female,Heart Disease,METFORMIN,,140.0
-,Male,,NONE,,110.0
-,Male,Asthma,NONE,160.0,130.0
-25.0,Male,Hypertension,LISINOPRIL,220.0,
-,Female,Heart Disease,ALBUTEROL,220.0,140.0
-60.0,Male,Heart Disease,METFORMIN,160.0,120.0
-70.0,Female,Heart Disease,NONE,160.0,130.0
-25.0,Male,Hypertension,NONE,200.0,110.0
-60.0,Other,Heart Disease,ALBUTEROL,160.0,
-,Male,Hypertension,LISINOPRIL,220.0,120.0
-25.0,Male,Heart Disease,METFORMIN,160.0,110.0
-60.0,Other,,LISINOPRIL,200.0,110.0
-,Female,,LISINOPRIL,200.0,140.0
-,Female,Hypertension,METFORMIN,200.0,140.0
-70.0,Male,,METFORMIN,200.0,120.0
-,Other,Hypertension,NONE,180.0,110.0
-35.0,Female,,NONE,160.0,140.0
-,Male,,METFORMIN,,
-,Other,Hypertension,ATORVASTATIN,160.0,
-70.0,Female,Asthma,NONE,180.0,110.0
-35.0,Female,,ATORVASTATIN,200.0,140.0
-60.0,Other,Heart Disease,METFORMIN,180.0,120.0
-60.0,Other,Asthma,NONE,220.0,120.0
-,Other,Hypertension,LISINOPRIL,220.0,120.0
-35.0,Other,Asthma,METFORMIN,160.0,
-35.0,Male,Diabetes,ALBUTEROL,160.0,140.0
-70.0,Other,Diabetes,ATORVASTATIN,,140.0
-,Female,,METFORMIN,,
-60.0,Female,,METFORMIN,220.0,120.0
-70.0,Male,Heart Disease,NONE,200.0,120.0
-25.0,Female,Asthma,NONE,180.0,110.0
-60.0,Female,Diabetes,NONE,,130.0
-70.0,Other,,ALBUTEROL,,140.0
-60.0,Female,Asthma,NONE,200.0,140.0
-,Male,,METFORMIN,200.0,140.0
-25.0,Other,,NONE,160.0,130.0
-,Other,Diabetes,LISINOPRIL,180.0,110.0
-25.0,Male,Diabetes,NONE,200.0,130.0
-,Other,,ALBUTEROL,,120.0
-70.0,Other,Hypertension,LISINOPRIL,,120.0
-25.0,Male,,METFORMIN,220.0,140.0
-,Other,,METFORMIN,200.0,
-60.0,Male,Heart Disease,ATORVASTATIN,160.0,140.0
-25.0,Male,Heart Disease,LISINOPRIL,180.0,
-70.0,Female,Heart Disease,ATORVASTATIN,160.0,130.0
-25.0,Female,Hypertension,LISINOPRIL,,120.0
-35.0,Other,Hypertension,LISINOPRIL,160.0,
-60.0,Other,,ALBUTEROL,,130.0
-70.0,Male,Heart Disease,ATORVASTATIN,,120.0
-70.0,Other,Hypertension,ALBUTEROL,,
-,Male,Diabetes,LISINOPRIL,,140.0
-,Male,,METFORMIN,,140.0
-,Other,Asthma,LISINOPRIL,220.0,140.0
-70.0,Male,,ALBUTEROL,160.0,130.0
-60.0,Female,Asthma,ATORVASTATIN,220.0,140.0
-25.0,Other,Heart Disease,ATORVASTATIN,220.0,110.0
-25.0,Female,Asthma,ALBUTEROL,200.0,120.0
-60.0,Other,Heart Disease,ATORVASTATIN,200.0,130.0
-70.0,Male,Diabetes,NONE,200.0,140.0
-25.0,Other,Asthma,METFORMIN,180.0,120.0
-25.0,Female,,METFORMIN,200.0,
-25.0,Male,Heart Disease,METFORMIN,160.0,140.0
-,Other,,ATORVASTATIN,220.0,120.0
-,Other,Hypertension,ATORVASTATIN,160.0,110.0
-35.0,Other,Heart Disease,LISINOPRIL,200.0,
-,Female,Asthma,LISINOPRIL,180.0,110.0
-60.0,Female,Heart Disease,METFORMIN,180.0,120.0
-60.0,Other,,NONE,220.0,110.0
-60.0,Male,Diabetes,LISINOPRIL,160.0,120.0
-35.0,Male,Heart Disease,LISINOPRIL,,120.0
-,Female,Asthma,ATORVASTATIN,160.0,110.0
-70.0,Male,Hypertension,NONE,200.0,120.0
-70.0,Female,Diabetes,METFORMIN,,140.0
-35.0,Other,Hypertension,LISINOPRIL,180.0,120.0
-70.0,Female,Heart Disease,NONE,220.0,130.0
-60.0,Female,,NONE,220.0,120.0
-,Other,,METFORMIN,180.0,130.0
-25.0,Male,Asthma,NONE,200.0,120.0
-,Female,,NONE,180.0,120.0
-,Female,Diabetes,NONE,200.0,110.0
-35.0,Other,,LISINOPRIL,,140.0
-,Male,Asthma,METFORMIN,180.0,140.0
-60.0,Female,Heart Disease,NONE,200.0,
-70.0,Other,Heart Disease,NONE,,110.0
-60.0,Female,,LISINOPRIL,180.0,110.0
-35.0,Other,Hypertension,METFORMIN,220.0,140.0
-60.0,Male,Heart Disease,ATORVASTATIN,180.0,110.0
-70.0,Male,,LISINOPRIL,160.0,140.0
-,Male,Asthma,METFORMIN,180.0,110.0
-35.0,Male,,NONE,160.0,120.0
-,Female,Heart Disease,METFORMIN,,140.0
-25.0,Female,Asthma,METFORMIN,180.0,140.0
-,Male,,METFORMIN,,130.0
-25.0,Male,Diabetes,ATORVASTATIN,,110.0
-25.0,Male,Asthma,METFORMIN,200.0,110.0
-,Female,Diabetes,ATORVASTATIN,,140.0
-35.0,Male,Hypertension,NONE,,120.0
-70.0,Male,Asthma,ATORVASTATIN,180.0,120.0
-60.0,Male,Diabetes,NONE,180.0,120.0
-60.0,Other,Heart Disease,NONE,220.0,110.0
-70.0,Male,Heart Disease,ATORVASTATIN,200.0,130.0
-25.0,Other,Hypertension,LISINOPRIL,,140.0
-25.0,Other,Asthma,ALBUTEROL,200.0,
-35.0,Male,Asthma,METFORMIN,160.0,130.0
-,Other,Asthma,ALBUTEROL,,
-,Male,Hypertension,METFORMIN,200.0,130.0
-25.0,Female,Asthma,METFORMIN,220.0,120.0
-60.0,Female,Heart Disease,NONE,220.0,110.0
-35.0,Female,Diabetes,METFORMIN,,
-,Female,Heart Disease,METFORMIN,160.0,130.0
-35.0,Other,Heart Disease,ATORVASTATIN,220.0,110.0
-,Male,Diabetes,ALBUTEROL,220.0,
-,Male,Heart Disease,ATORVASTATIN,160.0,140.0
-70.0,Male,Hypertension,METFORMIN,200.0,130.0
-25.0,Female,Diabetes,NONE,220.0,140.0
-35.0,Female,Heart Disease,ATORVASTATIN,180.0,120.0
-35.0,Male,,ATORVASTATIN,220.0,140.0
-70.0,Female,Heart Disease,LISINOPRIL,200.0,140.0
-60.0,Male,Hypertension,METFORMIN,200.0,130.0
-60.0,Male,Asthma,NONE,,120.0
-25.0,Male,Heart Disease,ATORVASTATIN,180.0,140.0
-25.0,Male,Asthma,ATORVASTATIN,200.0,110.0
-,Male,,NONE,160.0,
-70.0,Male,Heart Disease,METFORMIN,180.0,140.0
-60.0,Male,Diabetes,LISINOPRIL,180.0,120.0
-,Female,Asthma,ATORVASTATIN,160.0,140.0
-35.0,Male,,LISINOPRIL,220.0,
-25.0,Male,Diabetes,ALBUTEROL,160.0,120.0
-35.0,Female,Diabetes,METFORMIN,160.0,130.0
-35.0,Female,Diabetes,ALBUTEROL,220.0,120.0
-,Female,Diabetes,ALBUTEROL,220.0,130.0
-60.0,Male,Heart Disease,ALBUTEROL,220.0,120.0
-25.0,Other,Heart Disease,METFORMIN,220.0,
-35.0,Other,Heart Disease,METFORMIN,220.0,
-25.0,Female,,NONE,160.0,120.0
-,Other,,LISINOPRIL,,140.0
-,Female,,LISINOPRIL,,
-,Male,Hypertension,NONE,200.0,130.0
-25.0,Other,,NONE,,130.0
-25.0,Male,Heart Disease,ALBUTEROL,,110.0
-60.0,Other,Heart Disease,NONE,160.0,130.0
-35.0,Male,Hypertension,ATORVASTATIN,220.0,110.0
-35.0,Other,Hypertension,LISINOPRIL,220.0,120.0
-,Male,,NONE,160.0,120.0
-,Male,Asthma,ATORVASTATIN,,120.0
-70.0,Other,Hypertension,ATORVASTATIN,160.0,140.0
-35.0,Male,Diabetes,ATORVASTATIN,200.0,140.0
-60.0,Male,Heart Disease,ATORVASTATIN,220.0,110.0
-,Male,Diabetes,ALBUTEROL,180.0,130.0
-,Other,Heart Disease,ATORVASTATIN,200.0,130.0
-70.0,Other,Heart Disease,ALBUTEROL,200.0,120.0
-60.0,Male,Hypertension,ALBUTEROL,160.0,
-,Male,Hypertension,ATORVASTATIN,,140.0
-60.0,Other,Diabetes,LISINOPRIL,220.0,140.0
-,Other,Heart Disease,ATORVASTATIN,180.0,120.0
-60.0,Male,Diabetes,ATORVASTATIN,200.0,140.0
-60.0,Male,Asthma,ATORVASTATIN,180.0,120.0
-25.0,Male,Diabetes,LISINOPRIL,,110.0
-,Female,,METFORMIN,,130.0
-60.0,Other,Diabetes,METFORMIN,180.0,
-70.0,Female,,ALBUTEROL,220.0,130.0
-60.0,Other,,ALBUTEROL,,130.0
-35.0,Other,,LISINOPRIL,180.0,110.0
-,Other,Asthma,NONE,200.0,140.0
-35.0,Other,Diabetes,METFORMIN,180.0,
-,Other,Diabetes,ALBUTEROL,180.0,140.0
-35.0,Other,Asthma,METFORMIN,160.0,130.0
-60.0,Other,Heart Disease,LISINOPRIL,,120.0
-60.0,Female,Hypertension,LISINOPRIL,220.0,130.0
-25.0,Male,Diabetes,NONE,220.0,140.0
-70.0,Male,Hypertension,NONE,160.0,130.0
-35.0,Female,Asthma,LISINOPRIL,220.0,120.0
-,Female,Heart Disease,ALBUTEROL,180.0,110.0
-25.0,Female,Heart Disease,METFORMIN,160.0,140.0
-35.0,Female,Heart Disease,ATORVASTATIN,200.0,130.0
-35.0,Other,Asthma,NONE,,140.0
-25.0,Male,,ATORVASTATIN,,110.0
-60.0,Other,,ALBUTEROL,,130.0
-35.0,Male,Hypertension,NONE,180.0,130.0
-60.0,Male,,ATORVASTATIN,200.0,140.0
-25.0,Female,,ALBUTEROL,160.0,140.0
-60.0,Other,Heart Disease,METFORMIN,160.0,120.0
-,Female,Heart Disease,ALBUTEROL,,110.0
-,Other,Hypertension,NONE,200.0,120.0
-35.0,Male,Diabetes,LISINOPRIL,200.0,130.0
-70.0,Female,Hypertension,METFORMIN,200.0,140.0
-,Female,Hypertension,ATORVASTATIN,220.0,130.0
-60.0,Male,Asthma,NONE,220.0,130.0
-35.0,Male,Asthma,LISINOPRIL,,
-60.0,Male,Hypertension,ALBUTEROL,200.0,
-,Female,Hypertension,LISINOPRIL,200.0,130.0
-25.0,Other,Hypertension,NONE,160.0,140.0
-35.0,Female,,NONE,160.0,130.0
-,Other,Asthma,LISINOPRIL,,
-,Female,Hypertension,ALBUTEROL,200.0,140.0
-35.0,Female,Heart Disease,LISINOPRIL,,130.0
-60.0,Male,Heart Disease,NONE,160.0,110.0
-70.0,Other,,NONE,160.0,110.0
-,Female,,ATORVASTATIN,220.0,130.0
-,Female,Diabetes,ATORVASTATIN,,140.0
-,Male,Diabetes,METFORMIN,,130.0
-70.0,Male,Diabetes,NONE,200.0,130.0
-60.0,Other,,ATORVASTATIN,200.0,
-60.0,Female,,LISINOPRIL,220.0,110.0
-,Other,,ALBUTEROL,180.0,
-,Female,Heart Disease,LISINOPRIL,180.0,
-60.0,Other,,ALBUTEROL,180.0,130.0
-70.0,Male,Heart Disease,ATORVASTATIN,,
-35.0,Female,Diabetes,METFORMIN,,110.0
-25.0,Other,Diabetes,LISINOPRIL,160.0,
-25.0,Male,Diabetes,LISINOPRIL,,110.0
-25.0,Male,Hypertension,LISINOPRIL,,
-,Other,Hypertension,ALBUTEROL,,110.0
-,Female,Asthma,ATORVASTATIN,220.0,
-60.0,Female,Asthma,LISINOPRIL,,
-35.0,Male,Asthma,LISINOPRIL,200.0,140.0
-70.0,Female,Hypertension,METFORMIN,200.0,110.0
-35.0,Female,Hypertension,METFORMIN,160.0,110.0
-70.0,Female,Asthma,ATORVASTATIN,220.0,110.0
-,Male,Asthma,ATORVASTATIN,200.0,120.0
-25.0,Other,,NONE,220.0,
-,Female,Asthma,METFORMIN,220.0,110.0
-,Male,,NONE,160.0,120.0
-,Male,Heart Disease,ALBUTEROL,220.0,140.0
-70.0,Other,Hypertension,NONE,,110.0
-60.0,Female,Asthma,LISINOPRIL,220.0,110.0
-60.0,Female,Hypertension,NONE,160.0,120.0
-70.0,Other,Hypertension,ATORVASTATIN,160.0,
-,Other,Hypertension,ALBUTEROL,160.0,140.0
-,Male,Heart Disease,LISINOPRIL,200.0,110.0
-,Male,Diabetes,NONE,,
-,Other,Asthma,ALBUTEROL,200.0,140.0
-,Female,Diabetes,ALBUTEROL,180.0,130.0
-35.0,Male,Diabetes,LISINOPRIL,,130.0
-25.0,Male,Diabetes,NONE,220.0,140.0
-,Female,Hypertension,ALBUTEROL,160.0,120.0
-70.0,Male,,ALBUTEROL,180.0,140.0
-25.0,Female,Hypertension,METFORMIN,,140.0
-,Female,Hypertension,ALBUTEROL,200.0,120.0
-70.0,Female,Diabetes,METFORMIN,160.0,120.0
-25.0,Other,Hypertension,NONE,200.0,
-70.0,Other,Diabetes,NONE,,
-,Other,,NONE,,120.0
-35.0,Female,Asthma,ATORVASTATIN,180.0,130.0
-,Female,Diabetes,NONE,220.0,130.0
-,Other,,ALBUTEROL,200.0,140.0
-70.0,Male,Asthma,LISINOPRIL,180.0,110.0
-60.0,Female,Heart Disease,METFORMIN,160.0,140.0
-,Male,Diabetes,ATORVASTATIN,220.0,140.0
-,Male,Diabetes,NONE,180.0,110.0
-35.0,Female,Heart Disease,NONE,200.0,120.0
-35.0,Female,Heart Disease,LISINOPRIL,,130.0
-,Male,Diabetes,LISINOPRIL,160.0,140.0
-60.0,Male,Heart Disease,ATORVASTATIN,200.0,110.0
-,Other,Hypertension,METFORMIN,220.0,
-60.0,Other,Asthma,NONE,220.0,140.0
-35.0,Female,Asthma,ATORVASTATIN,,130.0
-25.0,Other,Asthma,ALBUTEROL,,120.0
-70.0,Other,Hypertension,ALBUTEROL,160.0,140.0
-35.0,Other,Heart Disease,ATORVASTATIN,160.0,140.0
-35.0,Other,,NONE,,110.0
-,Male,Heart Disease,ATORVASTATIN,,
-,Female,Diabetes,NONE,220.0,
-,Other,Asthma,LISINOPRIL,,120.0
-70.0,Male,Heart Disease,ATORVASTATIN,180.0,130.0
-,Male,,NONE,200.0,120.0
-60.0,Male,Diabetes,ATORVASTATIN,,140.0
-,Other,Hypertension,ATORVASTATIN,160.0,140.0
-25.0,Other,Hypertension,NONE,180.0,
-35.0,Female,,NONE,160.0,130.0
-60.0,Other,Diabetes,METFORMIN,180.0,110.0
-25.0,Other,Asthma,ATORVASTATIN,,130.0
-60.0,Male,Heart Disease,ALBUTEROL,200.0,140.0
-60.0,Female,Diabetes,ATORVASTATIN,160.0,110.0
-35.0,Other,Hypertension,ATORVASTATIN,180.0,130.0
-,Other,,NONE,220.0,130.0
-,Male,,ATORVASTATIN,,110.0
-70.0,Male,Heart Disease,ATORVASTATIN,200.0,140.0
-,Other,,ALBUTEROL,,130.0
-70.0,Female,,NONE,220.0,110.0
-35.0,Female,Diabetes,ATORVASTATIN,200.0,140.0
-35.0,Male,Asthma,LISINOPRIL,220.0,110.0
-35.0,Male,Heart Disease,METFORMIN,,110.0
-25.0,Other,Diabetes,ALBUTEROL,180.0,130.0
-70.0,Male,Asthma,ATORVASTATIN,,140.0
-,Other,Diabetes,LISINOPRIL,,130.0
-,Female,Diabetes,ATORVASTATIN,,120.0
-60.0,Female,,ATORVASTATIN,160.0,120.0
-60.0,Other,Asthma,NONE,220.0,140.0
-60.0,Male,Heart Disease,NONE,220.0,110.0
-35.0,Female,Heart Disease,NONE,220.0,130.0
-,Male,Asthma,LISINOPRIL,160.0,130.0
-70.0,Female,,ATORVASTATIN,180.0,140.0
-35.0,Other,Hypertension,METFORMIN,,140.0
-25.0,Other,Diabetes,ALBUTEROL,180.0,120.0
-60.0,Other,,NONE,160.0,
-35.0,Female,Asthma,NONE,220.0,140.0
-35.0,Male,Diabetes,ATORVASTATIN,,
-25.0,Male,Heart Disease,ATORVASTATIN,200.0,140.0
-,Male,Hypertension,LISINOPRIL,200.0,110.0
-,Female,Heart Disease,LISINOPRIL,180.0,110.0
-70.0,Female,Asthma,NONE,220.0,120.0
-,Female,Diabetes,ATORVASTATIN,200.0,120.0
-60.0,Female,Asthma,METFORMIN,180.0,
-35.0,Female,Diabetes,ALBUTEROL,160.0,140.0
-25.0,Male,,ATORVASTATIN,180.0,130.0
-25.0,Female,Hypertension,ATORVASTATIN,180.0,120.0
-,Female,,LISINOPRIL,180.0,130.0
-,Male,,ALBUTEROL,,130.0
-,Female,Asthma,NONE,180.0,140.0
-35.0,Male,Hypertension,ATORVASTATIN,180.0,
-,Male,Diabetes,NONE,,140.0
-70.0,Other,Diabetes,ATORVASTATIN,,120.0
-25.0,Other,Heart Disease,NONE,160.0,130.0
-25.0,Other,Diabetes,ALBUTEROL,220.0,140.0
-60.0,Other,Asthma,LISINOPRIL,200.0,140.0
-60.0,Female,,ALBUTEROL,200.0,140.0
-35.0,Other,,METFORMIN,180.0,120.0
-70.0,Male,,LISINOPRIL,160.0,
-,Female,Hypertension,ALBUTEROL,180.0,140.0
-,Other,Diabetes,METFORMIN,200.0,120.0
-35.0,Male,Asthma,ATORVASTATIN,,130.0
-60.0,Female,Hypertension,ATORVASTATIN,220.0,110.0
-,Female,Heart Disease,NONE,160.0,120.0
-60.0,Other,Asthma,LISINOPRIL,,110.0
-,Female,Asthma,ATORVASTATIN,220.0,140.0
-,Male,Asthma,LISINOPRIL,160.0,140.0
-35.0,Female,,ATORVASTATIN,160.0,120.0
-,Male,Asthma,NONE,200.0,110.0
-70.0,Female,Diabetes,ALBUTEROL,,140.0
-25.0,Other,Asthma,NONE,160.0,130.0
-70.0,Male,,METFORMIN,160.0,
-70.0,Female,Asthma,ATORVASTATIN,220.0,
-25.0,Female,Heart Disease,METFORMIN,200.0,140.0
-70.0,Female,Heart Disease,METFORMIN,180.0,110.0
-,Male,,LISINOPRIL,200.0,140.0
-,Male,Diabetes,ATORVASTATIN,180.0,110.0
-,Male,Diabetes,METFORMIN,,130.0
-25.0,Other,Hypertension,ALBUTEROL,,110.0
-70.0,Other,,METFORMIN,160.0,140.0
-25.0,Male,Asthma,ALBUTEROL,,130.0
-,Female,,LISINOPRIL,160.0,120.0
-70.0,Other,Hypertension,METFORMIN,200.0,
-70.0,Male,,NONE,,140.0
-60.0,Female,,LISINOPRIL,200.0,140.0
-60.0,Other,Hypertension,ALBUTEROL,200.0,140.0
-,Female,Diabetes,LISINOPRIL,,130.0
-35.0,Female,Asthma,METFORMIN,200.0,120.0
-60.0,Female,Hypertension,ATORVASTATIN,,110.0
-25.0,Female,Heart Disease,ATORVASTATIN,,120.0
-60.0,Other,Diabetes,ALBUTEROL,,130.0
-,Other,Heart Disease,ALBUTEROL,180.0,140.0
-70.0,Other,Diabetes,ATORVASTATIN,200.0,
-,Male,Asthma,ALBUTEROL,220.0,140.0
-70.0,Other,Asthma,LISINOPRIL,,110.0
-70.0,Female,,NONE,200.0,
-35.0,Other,Heart Disease,NONE,160.0,140.0
-60.0,Female,Diabetes,LISINOPRIL,,
-25.0,Male,Asthma,NONE,,120.0
-25.0,Female,Hypertension,METFORMIN,220.0,130.0
-,Female,Asthma,LISINOPRIL,180.0,140.0
-70.0,Female,Hypertension,ALBUTEROL,180.0,110.0
-25.0,Male,Diabetes,LISINOPRIL,,120.0
-35.0,Other,Asthma,ATORVASTATIN,200.0,140.0
-70.0,Other,Asthma,ALBUTEROL,160.0,120.0
-35.0,Male,Diabetes,ATORVASTATIN,160.0,110.0
-25.0,Female,Asthma,ALBUTEROL,200.0,140.0
-25.0,Other,Hypertension,NONE,,110.0
-,Male,Asthma,LISINOPRIL,160.0,
-25.0,Other,Heart Disease,METFORMIN,180.0,110.0
-70.0,Male,,ALBUTEROL,200.0,
-70.0,Female,Hypertension,ALBUTEROL,220.0,140.0
-70.0,Other,Heart Disease,ATORVASTATIN,,
-,Male,Diabetes,NONE,200.0,140.0
-,Other,Hypertension,ATORVASTATIN,160.0,140.0
-25.0,Other,,ATORVASTATIN,,130.0
-,Other,,NONE,180.0,140.0
-,Other,Diabetes,METFORMIN,,
-,Male,Diabetes,ATORVASTATIN,,130.0
-25.0,Female,Hypertension,ATORVASTATIN,180.0,130.0
-,Male,Asthma,ALBUTEROL,180.0,140.0
-25.0,Male,Diabetes,NONE,,110.0
-25.0,Male,Asthma,LISINOPRIL,180.0,110.0
-25.0,Female,Heart Disease,METFORMIN,200.0,130.0
-60.0,Other,,METFORMIN,180.0,140.0
-70.0,Other,Asthma,NONE,180.0,110.0
-25.0,Other,,ALBUTEROL,,140.0
-60.0,Female,Asthma,ALBUTEROL,200.0,140.0
-,Other,Heart Disease,NONE,220.0,130.0
-,Female,Diabetes,ALBUTEROL,220.0,130.0
-70.0,Other,Heart Disease,METFORMIN,160.0,120.0
-,Other,Diabetes,METFORMIN,180.0,110.0
-70.0,Male,Diabetes,LISINOPRIL,180.0,110.0
-,Female,,NONE,200.0,110.0
-70.0,Male,Heart Disease,ATORVASTATIN,220.0,
-,Male,Asthma,ATORVASTATIN,160.0,140.0
-,Male,Heart Disease,LISINOPRIL,200.0,130.0
-,Female,,LISINOPRIL,180.0,110.0
-,Female,Diabetes,ALBUTEROL,220.0,120.0
-,Other,,LISINOPRIL,160.0,110.0
-25.0,Male,Hypertension,LISINOPRIL,,140.0
-35.0,Other,Hypertension,ATORVASTATIN,220.0,140.0
-60.0,Male,Asthma,ALBUTEROL,160.0,130.0
-35.0,Female,,LISINOPRIL,200.0,
-35.0,Female,Asthma,LISINOPRIL,,130.0
-70.0,Female,Asthma,ALBUTEROL,160.0,110.0
-25.0,Male,Hypertension,NONE,160.0,120.0
-70.0,Female,Asthma,ALBUTEROL,180.0,130.0
-25.0,Male,Hypertension,ATORVASTATIN,220.0,
-25.0,Other,Diabetes,NONE,180.0,130.0
-,Male,,METFORMIN,,140.0
-,Other,Asthma,ALBUTEROL,160.0,110.0
-,Male,Hypertension,ATORVASTATIN,180.0,110.0
-,Other,Heart Disease,NONE,220.0,110.0
-70.0,Female,Asthma,ALBUTEROL,,110.0
-,Other,Diabetes,LISINOPRIL,200.0,110.0
-70.0,Female,Diabetes,ALBUTEROL,180.0,110.0
-35.0,Female,Heart Disease,METFORMIN,,120.0
-35.0,Other,Hypertension,ALBUTEROL,200.0,
-,Male,Asthma,NONE,180.0,110.0
-,Male,Hypertension,NONE,,
-70.0,Male,Diabetes,ALBUTEROL,,110.0
-,Male,Hypertension,NONE,180.0,130.0
-70.0,Male,Diabetes,LISINOPRIL,,110.0
-,Female,Hypertension,ALBUTEROL,160.0,140.0
-35.0,Male,Heart Disease,LISINOPRIL,180.0,120.0
-25.0,Female,,LISINOPRIL,,130.0
-,Female,Heart Disease,ATORVASTATIN,200.0,130.0
-,Female,Heart Disease,ALBUTEROL,200.0,140.0
-70.0,Other,,NONE,160.0,110.0
-35.0,Other,,LISINOPRIL,180.0,120.0
-,Female,Asthma,ATORVASTATIN,,130.0
-70.0,Other,Asthma,ALBUTEROL,,120.0
-,Male,Heart Disease,ALBUTEROL,200.0,130.0
-,Male,Heart Disease,METFORMIN,160.0,110.0
-60.0,Female,Diabetes,METFORMIN,200.0,130.0
-25.0,Male,Diabetes,LISINOPRIL,200.0,130.0
-60.0,Female,Asthma,METFORMIN,160.0,
-35.0,Female,Asthma,LISINOPRIL,180.0,110.0
-,Male,Diabetes,NONE,,140.0
-35.0,Other,Diabetes,LISINOPRIL,180.0,140.0
-70.0,Male,Hypertension,METFORMIN,220.0,110.0
-,Male,Hypertension,NONE,220.0,140.0
-60.0,Female,Diabetes,METFORMIN,220.0,110.0
-60.0,Female,Hypertension,LISINOPRIL,160.0,140.0
-60.0,Female,,ATORVASTATIN,200.0,
-35.0,Female,Asthma,ALBUTEROL,180.0,140.0
-,Other,Asthma,METFORMIN,,130.0
-,Other,Diabetes,LISINOPRIL,220.0,110.0
-70.0,Other,Heart Disease,NONE,180.0,120.0
-,Female,Diabetes,METFORMIN,220.0,120.0
-35.0,Female,Hypertension,METFORMIN,220.0,110.0
-70.0,Female,Heart Disease,ALBUTEROL,,
-60.0,Other,Hypertension,LISINOPRIL,160.0,140.0
-25.0,Female,,ATORVASTATIN,200.0,
-35.0,Male,Hypertension,NONE,160.0,120.0
-35.0,Male,,LISINOPRIL,180.0,110.0
-,Female,,NONE,160.0,110.0
-,Male,Hypertension,METFORMIN,180.0,
-35.0,Male,Hypertension,ALBUTEROL,180.0,
-35.0,Other,,ALBUTEROL,200.0,140.0
-60.0,Female,Heart Disease,ATORVASTATIN,,130.0
-60.0,Female,,ALBUTEROL,200.0,130.0
-70.0,Other,Asthma,METFORMIN,160.0,140.0
-25.0,Male,,ATORVASTATIN,180.0,130.0
-,Male,Heart Disease,LISINOPRIL,220.0,120.0
-25.0,Female,Asthma,ALBUTEROL,220.0,130.0
-70.0,Male,Diabetes,ATORVASTATIN,180.0,140.0
-60.0,Other,Diabetes,METFORMIN,200.0,130.0
-,Other,Heart Disease,NONE,,110.0
-60.0,Female,,NONE,200.0,
-,Other,Hypertension,METFORMIN,180.0,120.0
-60.0,Other,Heart Disease,METFORMIN,180.0,110.0
-,Female,Asthma,NONE,,110.0
-,Other,Asthma,ATORVASTATIN,160.0,140.0
-,Other,Diabetes,NONE,160.0,
-70.0,Other,Asthma,METFORMIN,,
-,Male,Heart Disease,ALBUTEROL,160.0,120.0
-,Female,Asthma,LISINOPRIL,220.0,140.0
-,Female,Heart Disease,ALBUTEROL,160.0,120.0
-25.0,Female,Hypertension,ALBUTEROL,160.0,130.0
-35.0,Male,Diabetes,METFORMIN,160.0,110.0
-25.0,Male,Asthma,NONE,220.0,120.0
-,Female,Heart Disease,ATORVASTATIN,160.0,110.0
-,Male,,ALBUTEROL,220.0,140.0
-60.0,Female,Diabetes,NONE,,130.0
-,Male,Hypertension,ATORVASTATIN,200.0,140.0
-,Other,Heart Disease,ALBUTEROL,,130.0
-,Other,Hypertension,ATORVASTATIN,200.0,130.0
-,Female,Hypertension,NONE,,110.0
-,Male,Asthma,LISINOPRIL,200.0,140.0
-70.0,Male,Asthma,NONE,200.0,140.0
-,Other,Heart Disease,METFORMIN,180.0,120.0
-35.0,Other,,ATORVASTATIN,200.0,140.0
-35.0,Male,Heart Disease,LISINOPRIL,200.0,120.0
-,Male,,ATORVASTATIN,180.0,
-70.0,Male,Hypertension,ATORVASTATIN,160.0,
-60.0,Male,Diabetes,ALBUTEROL,160.0,
-,Male,Heart Disease,METFORMIN,180.0,140.0
-35.0,Male,Heart Disease,ATORVASTATIN,220.0,140.0
-60.0,Female,,NONE,200.0,120.0
-,Male,Hypertension,NONE,200.0,130.0
-60.0,Other,Hypertension,ALBUTEROL,180.0,120.0
-25.0,Female,,METFORMIN,180.0,
-35.0,Male,Hypertension,METFORMIN,220.0,120.0
-,Other,Asthma,NONE,160.0,130.0
-,Female,Diabetes,LISINOPRIL,,140.0
-70.0,Other,Heart Disease,ALBUTEROL,160.0,120.0
-,Male,Diabetes,ALBUTEROL,200.0,
-,Male,Heart Disease,NONE,180.0,
-70.0,Male,Asthma,NONE,220.0,140.0
-70.0,Male,Hypertension,LISINOPRIL,160.0,120.0
-,Female,,LISINOPRIL,220.0,130.0
-60.0,Female,Asthma,METFORMIN,160.0,140.0
-60.0,Other,Diabetes,ALBUTEROL,200.0,120.0
-70.0,Male,,ALBUTEROL,,110.0
-60.0,Other,Hypertension,NONE,220.0,
-25.0,Female,Asthma,METFORMIN,220.0,130.0
-70.0,Male,,ALBUTEROL,,130.0
-70.0,Male,Asthma,METFORMIN,220.0,130.0
-,Female,Asthma,METFORMIN,220.0,
-60.0,Female,Hypertension,NONE,160.0,120.0
-70.0,Female,Heart Disease,METFORMIN,160.0,140.0
-25.0,Female,,LISINOPRIL,,120.0
-,Female,Hypertension,LISINOPRIL,200.0,140.0
-,Male,Asthma,ATORVASTATIN,220.0,130.0
-70.0,Female,Hypertension,NONE,200.0,120.0
-25.0,Male,Heart Disease,ATORVASTATIN,,130.0
-35.0,Male,,LISINOPRIL,,110.0
-25.0,Female,Heart Disease,ATORVASTATIN,160.0,130.0
-25.0,Female,Diabetes,NONE,220.0,130.0
-,Male,,NONE,180.0,140.0
-,Female,Heart Disease,METFORMIN,,110.0
-35.0,Female,Asthma,ALBUTEROL,220.0,130.0
-60.0,Female,,METFORMIN,200.0,130.0
-60.0,Other,,NONE,160.0,110.0
-25.0,Male,Hypertension,LISINOPRIL,200.0,110.0
-,Other,Asthma,LISINOPRIL,,120.0
-,Female,Diabetes,METFORMIN,,140.0
-60.0,Other,Heart Disease,NONE,200.0,110.0
-35.0,Female,Hypertension,LISINOPRIL,,110.0
-,Other,Heart Disease,NONE,220.0,
-35.0,Female,Diabetes,LISINOPRIL,,110.0
-70.0,Other,Diabetes,NONE,160.0,140.0
-70.0,Other,,ATORVASTATIN,220.0,130.0
-,Other,Diabetes,NONE,180.0,130.0
-60.0,Male,Heart Disease,NONE,,130.0
-,Other,Asthma,METFORMIN,,130.0
-,Male,Asthma,ATORVASTATIN,160.0,
-70.0,Female,,ALBUTEROL,160.0,110.0
-25.0,Other,Heart Disease,METFORMIN,200.0,130.0
-25.0,Female,Heart Disease,ALBUTEROL,200.0,120.0
-60.0,Female,Diabetes,LISINOPRIL,200.0,130.0
-,Other,Heart Disease,ALBUTEROL,160.0,110.0
-35.0,Male,Hypertension,NONE,200.0,130.0
-,Other,Diabetes,ALBUTEROL,200.0,
-25.0,Female,Hypertension,METFORMIN,180.0,140.0
-25.0,Female,,METFORMIN,200.0,140.0
-70.0,Other,Asthma,ALBUTEROL,,110.0
-,Male,,METFORMIN,160.0,140.0
-,Male,Asthma,METFORMIN,220.0,140.0
-25.0,Female,,ALBUTEROL,180.0,120.0
-35.0,Female,Heart Disease,ATORVASTATIN,160.0,110.0
-60.0,Male,Hypertension,ATORVASTATIN,160.0,110.0
-60.0,Other,Asthma,LISINOPRIL,,140.0
-,Female,Diabetes,METFORMIN,200.0,140.0
-60.0,Male,Hypertension,ALBUTEROL,,140.0
-25.0,Female,Diabetes,METFORMIN,200.0,
-25.0,Other,Hypertension,NONE,200.0,130.0
-,Male,Hypertension,METFORMIN,160.0,
-,Female,,METFORMIN,200.0,110.0
-70.0,Other,Asthma,ATORVASTATIN,180.0,120.0
-,Female,Asthma,ALBUTEROL,180.0,130.0
-35.0,Other,Hypertension,METFORMIN,180.0,120.0
-60.0,Other,Heart Disease,ATORVASTATIN,160.0,110.0
-,Male,Heart Disease,LISINOPRIL,,110.0
-,Other,Diabetes,ATORVASTATIN,220.0,120.0
-70.0,Female,Diabetes,ATORVASTATIN,200.0,120.0
-,Other,,ATORVASTATIN,220.0,120.0
-25.0,Other,Hypertension,METFORMIN,,110.0
-60.0,Male,Diabetes,METFORMIN,,140.0
-,Other,Diabetes,LISINOPRIL,160.0,120.0
-,Other,Hypertension,NONE,180.0,130.0
-60.0,Female,,NONE,180.0,110.0
-25.0,Male,Diabetes,NONE,,
-35.0,Male,,LISINOPRIL,160.0,
-70.0,Male,Asthma,NONE,160.0,130.0
-60.0,Other,,NONE,200.0,140.0
-60.0,Male,Heart Disease,ATORVASTATIN,180.0,120.0
-35.0,Other,Heart Disease,METFORMIN,,110.0
-60.0,Other,,METFORMIN,220.0,120.0
-25.0,Female,Heart Disease,ATORVASTATIN,180.0,110.0
-25.0,Female,Asthma,ATORVASTATIN,200.0,
-35.0,Female,Hypertension,ATORVASTATIN,160.0,120.0
-70.0,Female,Heart Disease,METFORMIN,,130.0
-,Female,Heart Disease,NONE,180.0,140.0
-,Other,,ATORVASTATIN,220.0,130.0
-,Other,Asthma,LISINOPRIL,200.0,140.0
-60.0,Male,Hypertension,ATORVASTATIN,200.0,120.0
-,Other,,ALBUTEROL,180.0,120.0
-35.0,Other,,ATORVASTATIN,220.0,140.0
-35.0,Female,Asthma,METFORMIN,200.0,
-70.0,Other,Hypertension,ATORVASTATIN,,110.0
-,Female,Asthma,ALBUTEROL,200.0,130.0
-25.0,Male,Hypertension,LISINOPRIL,220.0,130.0
-,Male,Asthma,NONE,160.0,130.0
-60.0,Other,,ATORVASTATIN,160.0,120.0
-25.0,Male,,ALBUTEROL,180.0,130.0
-35.0,Other,Diabetes,ALBUTEROL,220.0,110.0
-,Male,Heart Disease,LISINOPRIL,200.0,110.0
-,Female,Asthma,METFORMIN,200.0,140.0
-70.0,Female,Diabetes,ATORVASTATIN,160.0,120.0
-,Female,Heart Disease,ALBUTEROL,160.0,110.0
-70.0,Female,Asthma,LISINOPRIL,,
-60.0,Other,Hypertension,NONE,160.0,120.0
-,Male,Heart Disease,ALBUTEROL,,120.0
-,Other,,LISINOPRIL,200.0,110.0
-,Female,Diabetes,METFORMIN,,
-,Other,Heart Disease,METFORMIN,,140.0
-,Male,Heart Disease,ALBUTEROL,180.0,110.0
-60.0,Other,,ALBUTEROL,160.0,
-25.0,Male,Asthma,ATORVASTATIN,,120.0
-60.0,Other,Hypertension,LISINOPRIL,200.0,
-70.0,Male,,ALBUTEROL,220.0,120.0
-60.0,Male,Hypertension,ATORVASTATIN,,110.0
-70.0,Female,Asthma,ATORVASTATIN,160.0,110.0
-,Male,Heart Disease,ALBUTEROL,180.0,130.0
-25.0,Female,Hypertension,METFORMIN,200.0,130.0
-,Female,Diabetes,LISINOPRIL,180.0,130.0
-35.0,Female,Diabetes,LISINOPRIL,220.0,110.0
-,Other,,METFORMIN,,140.0
-70.0,Other,Asthma,ALBUTEROL,,110.0
-,Other,,LISINOPRIL,160.0,
-,Other,,ALBUTEROL,,110.0
-25.0,Male,,ALBUTEROL,200.0,110.0
-,Male,Diabetes,ATORVASTATIN,220.0,120.0
+Patient Name,Age,Gender,Condition,Medication,Visit Date,Blood Pressure,Cholesterol,Email,Phone Number
+0,0,2,2,3,0,3,200.0,1,3
+1,4,1,1,4,4,1,200.0,3,4
+5,1,2,0,3,2,0,160.0,0,4
+7,4,1,1,0,0,0,,1,3
+0,4,0,0,4,3,0,180.0,3,0
+6,4,1,3,3,1,3,180.0,3,4
+8,4,1,3,2,3,1,,1,4
+0,2,2,4,4,3,4,,1,4
+5,2,2,2,4,0,3,180.0,1,4
+7,4,0,4,0,3,3,220.0,2,3
+1,0,1,0,1,4,1,200.0,3,0
+5,4,1,4,1,3,2,200.0,1,0
+5,4,1,1,0,1,3,180.0,3,2
+8,0,0,0,0,1,2,,1,4
+9,3,0,3,0,2,2,220.0,3,4
+7,1,0,2,1,1,0,180.0,3,2
+3,2,0,0,0,3,1,200.0,3,0
+5,3,0,0,3,1,2,160.0,0,1
+9,0,2,1,4,0,1,,1,1
+3,3,1,2,4,1,0,160.0,0,0
+7,1,1,3,2,4,1,180.0,3,4
+4,0,1,0,2,0,3,200.0,0,1
+6,3,1,0,4,2,2,220.0,3,3
+9,2,1,1,3,4,1,160.0,3,3
+2,2,1,4,1,3,4,220.0,3,2
+4,4,1,3,1,3,1,200.0,0,0
+6,3,1,2,3,3,2,160.0,1,0
+8,4,2,0,1,4,0,220.0,0,1
+0,3,1,0,0,4,0,220.0,1,4
+1,0,2,3,4,4,2,160.0,1,0
+2,0,0,4,4,0,3,200.0,3,1
+8,3,1,0,3,0,3,220.0,0,1
+7,1,0,3,1,3,0,180.0,1,0
+8,2,0,1,2,1,0,160.0,3,1
+0,0,0,4,2,3,2,,1,2
+7,2,2,2,1,2,3,,3,2
+2,0,0,0,2,0,0,200.0,0,0
+0,4,0,3,3,4,3,180.0,0,4
+3,4,0,1,3,0,0,220.0,0,2
+1,0,1,2,1,4,1,,1,2
+2,2,1,3,2,2,4,200.0,2,0
+3,4,2,3,3,2,1,180.0,1,3
+6,0,2,2,3,0,0,180.0,1,1
+2,1,1,1,0,4,4,200.0,3,2
+6,4,2,1,0,2,4,200.0,3,3
+7,0,1,4,3,3,0,220.0,1,4
+3,4,0,0,1,3,0,200.0,3,3
+1,1,0,2,4,4,3,220.0,3,0
+0,3,2,2,4,0,0,220.0,1,4
+5,4,1,2,3,2,2,160.0,2,4
+8,4,1,1,3,0,0,180.0,3,3
+4,1,2,0,3,3,2,180.0,0,0
+1,4,1,4,1,2,0,180.0,1,2
+3,1,0,3,0,0,3,160.0,1,3
+5,0,2,3,3,1,2,220.0,3,2
+1,1,2,2,3,4,1,220.0,3,3
+3,1,1,0,2,4,2,200.0,3,2
+9,4,2,1,1,1,3,160.0,3,3
+9,1,1,0,3,3,2,200.0,0,4
+6,1,1,0,2,2,0,160.0,3,1
+1,3,1,1,4,4,0,200.0,3,4
+9,0,1,2,3,1,3,,3,2
+3,4,1,0,3,1,4,180.0,3,0
+6,3,2,3,2,3,0,180.0,2,4
+3,2,0,1,1,3,1,220.0,2,1
+6,0,0,4,3,0,3,,1,2
+1,0,2,2,4,4,2,180.0,1,4
+5,2,2,1,3,0,2,220.0,3,3
+0,1,0,4,4,1,1,,3,0
+2,3,0,4,0,2,0,180.0,0,2
+5,4,0,0,0,2,3,200.0,0,4
+7,4,0,0,4,3,1,160.0,2,2
+3,4,0,0,1,2,0,,1,3
+7,2,1,1,3,2,3,220.0,2,1
+5,0,2,1,3,2,2,,2,4
+6,0,1,2,0,1,3,220.0,1,2
+2,4,0,0,4,2,4,,0,2
+2,0,0,4,3,2,3,220.0,1,2
+4,0,0,3,3,2,4,180.0,3,1
+2,4,1,2,1,0,3,200.0,3,2
+0,3,1,1,2,1,4,180.0,3,0
+2,3,0,2,0,3,2,200.0,3,0
+5,4,1,2,0,0,0,180.0,0,2
+4,2,1,2,2,4,4,180.0,0,0
+5,0,0,2,3,1,4,,3,4
+5,0,1,3,1,1,2,160.0,2,0
+8,2,2,0,1,4,4,220.0,3,2
+4,3,2,4,0,4,1,220.0,3,3
+5,1,2,2,1,4,2,220.0,2,4
+8,1,2,2,2,3,1,200.0,1,1
+8,1,0,2,3,2,2,220.0,1,2
+4,3,0,0,2,1,4,220.0,0,1
+7,3,0,1,4,2,1,,3,3
+6,2,2,1,0,2,4,180.0,0,1
+0,0,2,3,1,4,2,220.0,1,2
+6,2,1,1,4,3,4,160.0,2,2
+2,2,1,2,1,0,1,220.0,0,3
+0,3,2,2,3,3,1,200.0,3,2
+2,1,2,2,3,2,4,200.0,3,3
+5,4,2,3,3,3,3,200.0,2,3
+3,0,2,2,1,4,2,220.0,1,2
+4,3,1,1,4,0,2,,3,0
+0,1,2,0,3,4,4,160.0,3,3
+0,4,1,0,4,0,3,220.0,3,2
+5,4,2,4,1,2,1,,0,0
+7,3,2,1,4,0,0,,1,3
+8,4,2,2,1,0,0,220.0,0,0
+5,0,1,0,1,0,4,220.0,1,4
+9,4,1,1,0,3,3,,3,4
+8,3,0,0,1,3,3,,3,0
+4,3,2,2,1,2,2,,0,3
+8,1,0,0,2,0,1,220.0,3,2
+7,4,0,4,3,1,3,,1,1
+8,0,1,4,0,2,0,200.0,0,2
+4,2,1,0,0,0,1,220.0,0,1
+7,1,0,1,0,0,1,200.0,3,1
+6,4,2,1,2,3,4,180.0,0,3
+0,4,1,1,1,2,3,220.0,3,0
+0,1,2,0,3,0,4,180.0,3,2
+2,3,2,1,4,0,3,,3,0
+6,4,0,2,1,2,2,,1,4
+6,4,0,4,2,1,4,160.0,3,3
+8,0,0,2,1,2,4,,3,3
+0,4,0,1,1,2,0,180.0,2,4
+4,4,1,2,2,1,4,,2,2
+1,2,1,1,0,2,3,220.0,0,4
+1,0,0,0,0,0,0,,0,2
+7,0,1,2,3,2,4,160.0,2,1
+0,1,0,0,3,1,4,,3,3
+0,1,2,0,0,4,2,180.0,0,2
+1,2,2,3,4,2,4,180.0,3,0
+0,3,2,1,1,3,1,,3,0
+8,0,0,4,4,0,0,180.0,3,3
+9,2,2,1,1,0,1,180.0,0,4
+3,1,1,4,0,3,0,160.0,3,4
+6,1,2,1,3,3,2,220.0,0,2
+2,0,2,0,3,2,4,160.0,0,4
+7,4,2,2,4,3,4,200.0,3,3
+9,4,1,2,3,4,4,160.0,2,2
+1,1,0,3,0,1,0,,3,1
+6,3,1,4,4,3,4,220.0,3,4
+0,3,0,4,1,3,1,,1,4
+2,1,0,4,3,4,4,200.0,3,2
+0,4,2,0,2,0,2,220.0,0,0
+4,4,0,4,3,0,1,180.0,0,4
+4,2,1,2,1,2,4,160.0,3,3
+2,3,1,0,4,4,4,,1,4
+2,2,0,1,1,1,3,200.0,3,1
+1,3,2,4,2,1,0,180.0,1,4
+2,4,2,4,0,4,1,160.0,1,0
+8,4,1,1,3,1,3,180.0,3,4
+0,0,2,4,4,0,2,160.0,0,2
+9,2,0,1,0,1,0,220.0,0,4
+5,1,0,0,1,1,1,180.0,1,0
+2,2,1,2,4,4,4,180.0,0,2
+7,1,0,1,0,4,1,180.0,2,3
+4,4,1,3,4,1,4,220.0,1,2
+8,2,0,1,2,3,0,200.0,0,1
+6,4,1,4,2,4,4,160.0,2,2
+5,4,2,0,3,2,2,180.0,3,3
+9,4,0,0,3,2,4,220.0,0,4
+5,0,0,1,2,0,2,200.0,2,2
+2,2,1,2,4,1,0,160.0,3,2
+1,4,1,3,2,3,0,220.0,3,2
+4,1,0,0,3,0,1,160.0,2,2
+4,4,1,4,2,1,2,180.0,1,3
+6,4,0,4,2,4,2,200.0,1,0
+1,1,2,2,4,2,3,220.0,0,0
+0,4,1,0,0,3,3,200.0,3,2
+3,4,0,1,3,2,3,180.0,1,3
+8,2,2,4,4,4,4,200.0,1,3
+4,2,2,2,2,1,3,200.0,3,2
+7,3,0,0,2,4,2,,3,1
+4,3,1,0,0,4,4,200.0,1,2
+5,0,0,0,3,2,0,160.0,2,1
+4,4,2,0,3,3,1,220.0,0,2
+4,2,0,0,1,4,3,,1,1
+3,4,1,4,3,2,0,220.0,1,1
+3,1,2,2,0,3,2,220.0,3,2
+9,4,0,0,1,1,1,180.0,2,1
+0,4,1,3,1,1,0,180.0,0,4
+7,3,2,3,2,0,1,,1,0
+4,4,1,2,2,2,3,180.0,0,3
+4,0,2,1,3,3,2,180.0,3,1
+8,4,0,1,1,4,1,180.0,1,1
+3,3,1,1,2,1,0,220.0,1,3
+7,1,2,3,0,3,3,,3,1
+6,3,1,1,2,2,3,220.0,3,3
+9,0,1,4,2,0,0,160.0,1,2
+0,4,0,0,1,1,0,220.0,0,4
+1,1,1,3,1,3,1,160.0,2,4
+0,0,2,2,4,3,4,200.0,0,0
+5,3,2,2,0,3,3,200.0,3,1
+4,0,2,0,1,2,1,160.0,2,0
+9,4,2,3,3,2,0,160.0,0,2
+5,2,0,1,0,2,1,220.0,0,4
+7,0,1,1,0,4,0,160.0,3,2
+1,0,0,4,1,3,2,,3,2
+3,3,1,4,0,1,0,200.0,3,1
+9,3,1,1,1,2,0,200.0,2,2
+9,1,1,2,2,2,0,160.0,3,4
+4,3,0,2,4,3,4,180.0,3,0
+2,4,1,4,2,2,0,180.0,1,4
+9,4,0,0,1,4,3,160.0,1,1
+8,4,2,1,1,4,3,,2,4
+1,2,2,4,2,2,1,180.0,1,3
+1,2,1,4,3,3,4,160.0,3,0
+8,4,0,1,3,3,1,,2,3
+6,2,2,1,3,3,3,,3,3
+8,1,0,2,1,0,3,220.0,2,1
+8,3,0,0,0,2,2,,2,2
+1,4,1,0,1,3,0,180.0,0,3
+0,2,2,1,0,4,3,180.0,0,4
+1,4,1,3,2,1,1,160.0,2,2
+2,4,1,4,4,1,1,160.0,1,4
+4,0,2,4,0,3,0,,0,4
+5,3,2,1,3,1,0,200.0,3,2
+0,4,0,3,1,1,2,220.0,3,2
+3,0,2,2,2,0,4,200.0,0,4
+5,2,0,1,3,4,1,,2,1
+4,0,0,1,2,4,0,,1,0
+2,3,0,4,4,0,1,200.0,3,0
+2,4,2,1,1,0,0,220.0,0,1
+3,4,1,1,1,1,3,200.0,1,2
+0,2,0,1,4,2,1,160.0,1,4
+6,4,1,4,1,1,3,180.0,1,0
+8,3,1,2,0,0,1,160.0,2,4
+0,2,2,2,2,4,4,180.0,3,1
+6,1,1,1,3,1,2,,1,4
+2,0,1,4,4,2,3,220.0,3,1
+1,3,2,2,0,1,0,200.0,0,2
+4,1,0,2,3,3,4,220.0,3,1
+3,4,1,2,3,1,1,200.0,2,1
+4,4,2,4,4,0,3,160.0,2,0
+7,2,1,4,0,4,1,160.0,3,4
+7,0,1,1,3,4,1,200.0,3,0
+0,2,0,0,3,0,1,220.0,2,3
+2,4,1,2,0,3,2,200.0,2,1
+2,2,2,0,1,0,2,,3,3
+8,0,1,4,3,1,0,160.0,2,0
+8,4,0,4,2,0,3,,3,4
+8,2,0,4,0,0,4,160.0,3,0
+1,4,2,0,3,3,4,160.0,3,4
+5,3,0,4,4,1,4,180.0,0,4
+9,4,1,1,2,2,1,,3,2
+5,3,0,4,3,2,2,,3,1
+4,4,2,3,2,4,3,180.0,0,0
+5,4,0,0,2,0,1,220.0,1,4
+1,3,0,3,1,4,2,,2,0
+4,1,0,4,2,3,2,200.0,3,0
+5,0,2,1,1,2,3,180.0,2,4
+1,1,0,2,0,0,3,,3,3
+9,2,0,4,1,3,3,220.0,2,1
+5,4,1,1,4,3,1,,0,1
+1,1,2,0,3,0,0,160.0,2,2
+8,4,0,3,0,3,3,200.0,2,2
+2,2,2,3,0,0,0,180.0,2,2
+8,2,0,3,4,0,1,160.0,1,1
+2,1,0,0,1,1,0,220.0,1,3
+3,1,0,1,3,4,4,160.0,3,1
+3,4,1,0,1,3,0,160.0,0,1
+3,0,1,3,2,3,3,220.0,2,1
+9,1,1,4,1,1,1,160.0,2,1
+8,1,2,2,0,1,3,180.0,2,3
+2,3,2,0,3,1,4,,2,2
+1,4,1,0,1,2,3,160.0,1,0
+4,3,2,1,3,2,3,180.0,3,2
+1,3,0,1,3,2,3,,3,2
+4,2,0,0,2,0,2,,0,0
+7,0,0,3,2,3,4,160.0,2,1
+1,4,1,2,0,4,3,180.0,3,3
+5,4,2,1,4,0,3,160.0,3,3
+5,4,1,3,3,3,3,220.0,3,2
+0,1,2,4,4,3,1,,1,0
+8,1,0,1,0,1,2,160.0,3,4
+4,4,1,3,3,1,1,,3,1
+4,1,2,3,3,0,2,180.0,1,2
+8,0,2,2,4,1,3,200.0,3,3
+9,3,0,2,1,3,4,160.0,3,0
+0,1,1,4,2,1,0,160.0,3,0
+9,2,1,3,1,2,0,,1,2
+9,1,1,3,4,1,3,180.0,2,4
+9,4,0,2,2,3,1,220.0,0,3
+8,0,1,1,1,0,4,180.0,3,2
+9,4,0,1,2,4,2,160.0,1,4
+5,4,0,0,3,1,3,220.0,3,0
+3,2,0,2,1,3,4,180.0,1,1
+7,0,2,0,2,4,4,200.0,0,3
+4,0,1,2,2,4,2,,0,3
+4,0,1,4,2,2,4,180.0,2,4
+7,0,0,3,1,4,1,180.0,2,2
+8,0,0,4,0,3,1,200.0,0,0
+1,2,1,2,1,3,1,160.0,3,4
+8,1,0,3,4,1,4,,3,1
+4,4,1,1,1,1,1,180.0,3,1
+4,0,2,1,2,1,2,220.0,2,1
+7,1,0,0,3,4,4,180.0,3,4
+9,1,1,2,1,4,0,,2,0
+8,4,0,2,1,2,4,180.0,0,3
+2,2,1,1,2,1,2,200.0,3,2
+7,4,1,4,3,0,0,180.0,3,3
+5,4,0,3,3,2,4,180.0,0,0
+4,1,2,4,4,0,1,220.0,3,3
+7,3,1,4,1,4,3,200.0,3,4
+8,3,1,1,3,2,3,200.0,1,1
+4,4,1,1,3,2,1,180.0,2,0
+1,4,2,1,0,3,3,220.0,3,0
+7,1,2,0,0,4,3,180.0,0,3
+0,2,0,4,3,4,1,180.0,3,4
+4,4,2,2,4,2,1,,3,3
+8,1,0,3,3,4,4,,2,3
+3,1,0,0,2,2,4,220.0,1,0
+2,0,2,2,1,3,1,160.0,2,3
+6,2,0,4,4,2,2,,3,1
+9,0,2,1,2,4,3,160.0,3,3
+6,4,0,4,4,4,4,200.0,3,1
+8,0,2,3,2,2,3,,3,0
+5,0,2,0,1,2,0,,0,4
+5,4,0,0,1,2,1,220.0,1,1
+3,3,1,3,0,1,2,160.0,3,4
+9,1,0,2,2,4,0,,3,4
+0,2,2,2,0,4,0,,3,1
+3,0,1,0,2,1,0,220.0,1,0
+6,2,0,0,0,2,1,220.0,2,2
+3,3,0,1,1,3,4,160.0,1,4
+6,3,0,2,4,2,1,200.0,1,4
+4,0,1,3,0,2,4,200.0,1,0
+5,4,2,2,2,1,0,180.0,3,0
+4,0,0,1,2,4,0,,3,3
+2,4,0,0,1,2,2,160.0,0,0
+9,1,0,0,2,4,4,,2,4
+0,4,0,1,3,0,0,160.0,3,1
+6,0,0,3,4,4,3,160.0,1,2
+0,2,2,0,0,3,2,160.0,2,3
+6,4,2,4,4,3,1,,2,1
+8,4,0,0,1,2,2,220.0,0,2
+3,0,1,4,0,4,3,,3,2
+2,4,2,1,0,2,4,160.0,1,2
+5,2,1,1,3,1,1,180.0,3,1
+6,3,2,0,1,3,1,200.0,0,3
+0,4,0,2,2,2,4,160.0,3,3
+2,3,2,4,3,1,2,180.0,2,2
+1,2,0,3,3,2,0,220.0,1,1
+1,0,2,0,4,4,2,160.0,3,2
+4,1,0,3,4,4,3,180.0,0,0
+5,4,0,0,4,4,0,160.0,3,3
+8,1,0,2,3,4,2,,2,4
+0,2,0,2,2,0,4,180.0,1,2
+3,4,1,2,0,1,3,,3,0
+3,3,0,2,4,1,3,,3,3
+0,4,1,1,2,4,3,180.0,2,1
+9,1,1,1,1,0,0,200.0,3,3
+8,4,0,4,4,4,1,180.0,0,1
+2,1,1,3,0,0,0,200.0,3,1
+6,4,2,0,1,4,2,160.0,3,2
+9,0,0,0,1,3,1,160.0,3,2
+6,3,1,1,0,3,2,180.0,2,3
+6,1,0,0,4,2,1,160.0,2,0
+9,4,0,1,3,4,0,220.0,0,3
+4,4,0,4,0,1,3,,3,4
+1,2,1,3,0,2,4,,2,1
+6,4,2,4,0,3,3,200.0,0,1
+9,1,2,2,1,4,0,160.0,0,2
+9,2,1,2,2,2,1,200.0,3,0
+7,1,0,2,3,4,3,,1,2
+4,4,1,4,4,3,0,,3,4
+5,4,1,0,4,2,2,160.0,1,3
+7,0,1,3,2,3,4,220.0,0,3
+7,4,0,2,0,0,3,220.0,2,0
+0,2,1,2,3,3,1,160.0,3,2
+1,3,0,2,4,4,2,160.0,0,2
+9,0,1,3,4,1,0,200.0,2,4
+1,2,2,2,0,3,4,160.0,0,3
+8,4,1,3,2,1,1,220.0,3,2
+0,0,1,2,3,0,0,160.0,1,0
+5,2,2,4,2,2,0,200.0,0,3
+1,4,0,4,2,2,3,200.0,2,4
+3,4,0,3,3,1,3,200.0,3,0
+6,3,1,4,3,2,1,200.0,3,1
+8,4,2,3,4,3,0,180.0,3,4
+4,1,0,4,4,1,3,160.0,1,0
+5,4,1,4,3,4,4,,3,2
+8,4,2,3,1,3,4,160.0,3,1
+6,3,0,0,4,3,0,180.0,2,4
+0,1,0,4,1,3,3,200.0,0,2
+6,2,2,2,3,4,1,180.0,1,1
+7,2,2,0,4,0,1,220.0,3,3
+6,4,2,3,2,2,1,220.0,1,2
+7,1,2,0,3,1,4,160.0,3,0
+0,1,1,1,0,0,3,160.0,1,4
+2,3,2,1,1,1,3,,3,1
+7,4,0,4,3,2,4,,0,2
+4,2,0,4,3,4,1,220.0,0,3
+6,3,1,2,4,3,1,200.0,1,4
+6,0,0,0,4,3,0,180.0,2,4
+4,2,0,1,4,4,2,,1,2
+3,3,2,4,0,0,3,,3,3
+9,2,0,0,4,0,3,200.0,0,1
+2,4,1,4,3,1,3,200.0,0,2
+5,0,2,4,4,4,2,160.0,0,1
+7,4,2,1,2,0,0,180.0,2,4
+4,0,1,1,4,4,2,200.0,2,1
+0,4,2,4,0,2,1,,3,3
+7,3,2,3,2,3,1,,1,0
+9,0,1,4,3,3,3,220.0,1,3
+0,4,2,4,3,3,4,200.0,3,1
+8,2,1,2,1,4,3,160.0,0,2
+6,0,1,2,2,4,4,180.0,2,4
+8,3,0,2,1,1,2,160.0,3,0
+7,0,0,3,2,3,1,,3,2
+9,1,2,3,2,1,4,160.0,2,2
+2,2,2,4,0,3,2,,1,3
+7,3,1,2,1,1,1,,0,1
+4,3,2,3,0,1,4,,1,3
+1,4,1,1,2,2,3,,3,1
+7,4,1,4,3,1,3,,0,3
+6,4,2,0,2,4,3,220.0,3,2
+6,3,1,4,0,1,2,160.0,3,4
+7,2,0,0,1,3,3,220.0,1,1
+0,0,2,2,1,1,0,220.0,1,0
+1,0,0,0,0,0,1,200.0,1,0
+4,2,2,2,1,3,2,200.0,2,2
+7,3,1,1,4,0,3,200.0,3,3
+0,0,2,0,3,3,1,180.0,0,3
+6,0,0,4,3,4,4,200.0,1,2
+6,0,1,2,3,4,3,160.0,1,0
+9,4,2,4,1,4,1,220.0,2,0
+7,4,2,3,1,0,0,160.0,0,3
+1,1,2,2,2,2,4,200.0,3,1
+3,4,0,0,2,3,0,180.0,3,4
+1,2,0,2,3,4,1,180.0,2,1
+6,2,2,4,4,3,0,220.0,3,0
+6,2,1,1,2,0,1,160.0,3,1
+8,1,1,2,2,2,1,,1,4
+6,4,0,0,1,0,0,160.0,1,1
+4,3,1,3,4,3,1,200.0,0,1
+5,3,0,1,3,2,3,,3,1
+7,1,2,3,2,2,1,180.0,1,1
+1,3,0,2,4,0,2,220.0,1,2
+5,2,0,4,4,4,1,220.0,0,0
+0,4,2,4,3,3,2,180.0,3,4
+3,0,1,0,4,1,1,200.0,1,0
+4,4,0,4,4,1,1,180.0,2,2
+1,4,0,1,4,0,0,200.0,2,2
+5,1,2,4,2,3,3,,3,2
+3,4,1,0,3,3,3,180.0,3,2
+8,2,0,2,4,0,4,200.0,0,1
+4,3,2,2,4,3,0,,2,0
+4,2,0,4,2,4,0,180.0,2,3
+8,1,2,3,3,0,3,220.0,3,4
+7,2,1,2,1,4,0,180.0,3,2
+8,3,1,4,2,3,3,160.0,3,0
+4,4,1,0,3,0,0,180.0,3,2
+4,1,1,4,4,3,1,160.0,2,2
+5,4,0,2,3,0,3,,0,2
+6,0,0,0,3,3,3,180.0,2,2
+3,4,1,4,3,4,2,,3,2
+8,0,1,1,1,4,0,,2,4
+3,0,1,0,3,3,0,200.0,0,0
+8,4,0,1,1,0,3,,1,2
+0,1,1,3,4,1,1,,2,2
+4,3,1,0,1,4,1,180.0,3,2
+6,2,1,1,4,4,1,180.0,1,2
+5,2,2,2,4,1,0,220.0,3,1
+6,3,1,2,1,3,2,200.0,3,1
+6,0,2,3,2,0,3,,3,3
+6,0,2,0,0,3,4,200.0,2,2
+3,1,1,0,3,2,2,160.0,3,3
+8,4,2,0,0,4,4,,1,4
+2,4,1,3,3,2,2,200.0,0,3
+0,0,0,0,3,4,1,220.0,3,0
+1,2,0,2,4,4,0,220.0,2,1
+6,1,0,1,3,2,4,,3,1
+7,4,0,2,3,2,2,160.0,0,2
+3,1,2,2,1,3,0,220.0,1,2
+5,4,1,1,0,2,4,220.0,3,4
+1,4,1,2,1,3,3,160.0,3,4
+2,3,1,3,3,3,2,200.0,0,0
+7,0,0,1,4,3,3,220.0,2,2
+2,1,0,2,1,4,1,180.0,1,2
+1,1,1,4,1,4,3,220.0,0,4
+6,3,0,2,2,2,3,200.0,3,4
+7,2,1,3,3,4,2,200.0,1,4
+2,2,1,0,4,2,1,,3,1
+5,0,1,2,1,4,3,180.0,0,3
+8,0,1,0,1,0,0,200.0,3,3
+4,4,1,4,4,0,4,160.0,3,2
+8,3,1,2,3,2,3,180.0,3,1
+1,2,1,1,2,4,1,180.0,2,4
+3,4,0,0,1,4,3,160.0,3,2
+4,1,1,4,2,3,4,220.0,3,1
+0,0,1,1,0,1,1,160.0,3,0
+5,1,0,1,3,2,2,160.0,1,1
+0,1,0,1,0,1,1,220.0,3,2
+7,4,0,1,0,1,2,220.0,3,3
+4,2,1,2,0,2,1,220.0,0,4
+0,0,2,2,3,4,4,220.0,2,0
+0,1,2,2,3,2,4,220.0,1,1
+2,0,0,4,4,1,1,160.0,3,2
+8,4,2,4,2,4,3,,0,2
+2,4,0,4,2,0,4,,2,4
+4,4,1,3,4,2,2,200.0,1,2
+4,0,2,4,4,2,2,,1,2
+1,0,1,2,0,4,0,,3,4
+2,2,2,2,4,0,2,160.0,1,0
+9,1,1,3,1,0,0,220.0,0,3
+8,1,2,3,2,4,1,220.0,1,3
+4,4,1,4,4,3,1,160.0,3,1
+1,4,1,0,1,2,1,,0,0
+2,3,2,3,1,2,3,160.0,2,1
+8,1,1,1,1,1,3,200.0,2,3
+2,2,1,2,1,4,0,220.0,3,4
+0,4,1,1,0,1,2,180.0,3,2
+1,4,2,2,1,1,2,200.0,3,3
+8,3,2,2,0,0,1,200.0,2,0
+6,2,1,3,0,2,4,160.0,2,3
+7,4,1,3,1,1,3,,2,0
+7,2,2,1,2,0,3,220.0,2,0
+8,4,2,2,1,4,1,180.0,1,0
+2,2,1,1,1,1,3,200.0,0,1
+1,2,1,0,1,2,1,180.0,0,4
+7,0,1,1,2,1,0,,3,3
+1,4,0,4,3,4,2,,1,4
+7,2,2,1,3,1,4,180.0,2,2
+0,3,0,4,0,2,2,220.0,2,3
+2,2,2,4,0,0,2,,3,4
+0,1,2,4,2,2,0,180.0,3,4
+7,4,2,0,4,0,3,200.0,3,2
+6,1,2,1,3,3,4,180.0,2,0
+6,4,2,1,0,2,3,180.0,3,3
+0,1,2,0,3,2,2,160.0,1,3
+6,2,2,2,2,4,1,,0,2
+7,2,0,3,2,1,2,220.0,2,0
+8,0,1,1,4,0,3,220.0,1,3
+0,3,1,3,4,0,2,160.0,2,3
+3,1,0,0,2,4,1,220.0,3,3
+2,4,0,2,0,4,0,180.0,3,0
+6,0,0,2,3,1,3,160.0,3,2
+6,1,0,2,1,1,2,200.0,0,3
+4,1,2,0,4,2,3,,3,4
+9,0,1,4,1,3,0,,2,0
+0,2,2,4,0,1,2,,3,1
+5,1,1,3,4,4,2,180.0,2,2
+6,2,1,4,1,1,3,200.0,0,4
+2,0,0,4,0,0,3,160.0,3,3
+3,2,2,2,3,3,1,160.0,3,1
+6,4,0,2,0,2,0,,3,2
+3,4,2,3,4,0,1,200.0,3,0
+7,1,1,1,2,0,2,200.0,3,1
+7,3,0,3,3,3,3,200.0,3,1
+9,4,0,3,1,2,2,220.0,3,4
+8,2,1,0,4,4,2,220.0,2,2
+5,1,1,0,2,2,4,,0,4
+4,2,1,3,0,1,4,200.0,3,4
+9,4,0,3,2,0,2,200.0,2,3
+1,0,2,3,4,1,3,160.0,3,0
+4,1,0,4,4,4,2,160.0,2,1
+0,4,2,0,2,1,4,,3,2
+2,4,0,3,0,2,3,200.0,3,0
+1,1,0,2,2,1,2,,3,0
+1,2,1,2,4,4,0,160.0,3,2
+9,3,2,4,4,4,0,160.0,1,0
+8,4,0,4,1,4,2,220.0,2,3
+9,4,0,1,1,2,3,,1,0
+0,4,1,1,3,4,2,,2,3
+6,3,1,1,4,0,2,200.0,0,1
+6,2,2,4,1,4,4,200.0,3,1
+8,2,0,4,2,1,0,220.0,0,4
+0,4,2,4,0,1,4,180.0,0,3
+8,4,0,2,2,1,4,180.0,2,1
+3,2,2,4,0,2,2,180.0,1,0
+6,3,1,2,1,1,4,,3,2
+1,1,0,1,3,2,0,,2,2
+5,0,2,1,2,2,4,160.0,3,3
+2,0,1,1,2,4,0,,0,4
+0,0,1,3,2,0,4,,3,0
+4,4,2,3,0,4,0,,1,3
+8,4,0,0,1,4,4,220.0,2,2
+2,2,0,0,2,2,4,,1,3
+4,1,1,0,2,2,3,200.0,1,0
+2,3,0,3,3,1,0,200.0,2,1
+5,1,0,3,3,1,0,160.0,1,0
+4,3,0,0,1,4,0,220.0,3,1
+9,4,1,0,1,3,1,200.0,3,1
+7,0,2,4,4,3,4,220.0,3,1
+9,4,0,0,3,1,0,220.0,3,3
+6,4,1,4,4,3,1,160.0,1,2
+7,4,1,2,0,1,3,220.0,2,3
+9,3,2,3,4,2,0,,2,2
+7,2,0,0,2,4,0,220.0,3,0
+7,2,0,3,4,0,1,160.0,2,4
+1,3,2,3,1,4,4,160.0,3,0
+8,4,2,3,0,1,3,160.0,1,3
+8,4,1,2,2,1,0,200.0,2,3
+1,4,1,1,4,4,4,,2,2
+2,4,2,0,0,1,3,200.0,0,3
+3,4,0,1,0,3,2,180.0,0,1
+2,1,1,1,2,3,2,,0,3
+4,0,1,1,4,1,3,220.0,1,2
+4,4,0,3,0,1,1,160.0,3,2
+7,3,1,4,0,3,3,180.0,3,1
+9,0,0,3,3,1,3,,3,2
+9,4,0,3,0,1,1,200.0,1,4
+8,3,0,1,3,4,1,160.0,1,0
+0,0,2,3,4,0,4,200.0,0,3
+2,3,2,1,4,3,4,,2,4
+6,4,2,4,4,4,1,,3,3
+5,1,0,0,1,0,2,180.0,3,4
+9,4,0,1,4,1,2,220.0,2,3
+5,4,2,4,0,1,3,200.0,0,1
+7,3,1,0,2,4,0,180.0,2,2
+5,2,0,2,3,1,3,160.0,2,2
+6,4,1,1,1,2,3,220.0,3,1
+1,4,1,1,4,4,0,180.0,0,4
+6,1,0,2,4,0,1,200.0,1,0
+5,1,0,2,2,4,2,,3,4
+6,4,1,1,2,3,3,160.0,1,2
+3,2,1,2,1,4,0,200.0,0,0
+7,4,2,3,3,1,4,220.0,2,3
+2,2,2,0,4,1,3,220.0,3,0
+1,1,0,0,1,2,2,,3,4
+9,0,2,0,0,2,1,,0,1
+4,3,2,3,0,2,3,160.0,3,3
+2,1,2,2,1,0,3,160.0,1,4
+4,1,2,4,4,2,0,,3,3
+7,4,1,2,1,0,4,,0,0
+1,4,0,1,4,2,4,220.0,0,2
+8,4,2,0,2,0,1,,1,4
+9,3,1,2,1,4,2,180.0,3,1
+3,4,1,4,4,4,1,200.0,3,0
+8,2,1,1,1,1,3,,2,4
+7,4,2,3,1,0,3,160.0,3,1
+2,0,2,3,4,3,4,180.0,0,4
+3,1,0,4,4,1,2,160.0,2,0
+6,2,2,1,3,4,0,180.0,0,4
+5,0,2,0,1,0,2,,2,3
+3,2,1,2,0,2,3,200.0,3,0
+7,2,0,1,1,3,0,160.0,2,4
+0,1,2,3,1,4,2,180.0,0,2
+5,4,2,4,4,1,2,220.0,3,4
+4,4,1,4,1,0,0,,0,3
+9,3,1,2,1,3,3,200.0,1,1
+4,4,2,4,0,0,2,,1,1
+3,3,0,4,4,2,0,220.0,1,1
+4,1,0,1,1,1,3,200.0,1,2
+7,1,1,0,2,0,0,220.0,3,3
+6,1,1,2,3,4,0,,3,0
+2,0,2,1,0,1,2,180.0,3,1
+9,3,1,0,1,4,3,,0,3
+4,4,2,1,2,0,2,,2,4
+4,4,0,1,1,1,1,,0,2
+3,2,0,4,1,4,1,160.0,0,3
+2,2,2,0,4,2,3,220.0,0,3
+8,2,1,2,4,2,0,220.0,0,0
+4,1,0,2,4,0,2,220.0,3,3
+7,4,1,0,2,1,2,160.0,2,0
+0,3,0,4,1,3,3,180.0,0,2
+9,1,2,3,3,1,3,,3,2
+4,0,2,1,0,2,1,180.0,0,4
+7,2,2,4,4,4,4,160.0,1,0
+7,1,0,0,4,3,3,220.0,0,0
+9,1,1,1,1,0,4,,0,1
+8,0,1,2,1,3,3,200.0,3,1
+7,4,1,3,2,0,0,200.0,1,4
+0,4,0,2,2,3,0,180.0,2,2
+7,3,0,0,4,0,1,220.0,0,1
+7,4,0,1,1,0,1,200.0,2,3
+7,2,0,0,3,3,4,180.0,1,2
+6,1,0,1,0,3,3,160.0,0,3
+6,0,1,4,1,0,2,180.0,3,0
+8,0,0,3,1,2,1,180.0,3,2
+4,4,0,4,2,3,2,180.0,3,4
+7,4,1,4,0,1,2,,3,0
+2,4,0,0,4,4,3,180.0,3,0
+4,1,1,3,1,0,4,180.0,3,3
+8,4,1,1,4,0,3,,3,0
+1,3,2,1,1,4,1,,0,1
+4,0,2,2,4,2,2,160.0,2,2
+4,0,2,1,0,4,3,220.0,2,1
+5,2,2,0,2,3,3,200.0,3,3
+3,2,0,4,0,4,3,200.0,3,3
+5,1,2,4,3,0,1,180.0,1,2
+0,3,1,4,2,4,4,160.0,3,0
+6,4,0,3,0,1,3,180.0,3,4
+6,4,2,1,3,3,1,200.0,3,3
+3,1,1,0,1,4,2,,0,2
+9,2,0,3,1,0,0,220.0,0,4
+9,4,0,2,4,3,1,160.0,2,0
+8,2,2,0,2,0,0,,2,3
+3,4,0,0,1,2,3,220.0,1,2
+4,4,1,0,2,1,3,160.0,1,2
+9,1,0,4,1,2,1,160.0,1,2
+7,4,1,0,4,1,0,200.0,1,3
+2,3,0,1,0,4,3,,3,4
+4,0,2,0,4,3,2,160.0,3,2
+0,3,1,4,3,4,4,160.0,2,0
+7,3,0,0,1,1,4,220.0,0,2
+7,0,0,2,3,1,3,200.0,0,4
+3,3,0,2,3,1,0,180.0,3,3
+8,4,1,4,2,0,3,200.0,3,2
+0,4,1,1,1,3,0,180.0,1,2
+9,4,1,1,3,4,2,,1,0
+3,0,2,3,0,4,0,,3,0
+9,3,2,4,3,2,3,160.0,0,2
+3,0,1,0,0,1,2,,1,2
+3,4,0,4,2,1,1,160.0,0,0
+3,3,2,3,3,1,4,200.0,3,4
+8,3,1,4,4,4,3,,0,1
+3,2,0,4,2,2,3,200.0,0,1
+1,2,2,3,0,0,3,200.0,0,2
+2,4,0,1,2,3,2,,1,0
+9,1,0,0,3,0,1,200.0,2,3
+4,2,0,3,1,4,0,,3,3
+5,0,0,2,1,1,1,,0,1
+0,2,2,1,0,3,2,,0,4
+6,4,2,2,0,4,3,180.0,0,1
+8,3,2,1,1,4,4,200.0,2,2
+4,4,1,0,0,4,3,220.0,3,4
+7,3,2,0,2,3,0,,1,3
+1,3,0,4,4,3,4,200.0,2,0
+6,1,2,2,4,2,3,160.0,0,0
+5,2,0,1,2,2,4,,2,2
+4,0,1,0,4,0,1,,2,1
+6,0,0,3,3,3,2,220.0,2,2
+4,4,0,0,2,3,3,180.0,3,0
+1,3,0,3,0,3,0,180.0,3,3
+5,0,1,1,2,2,1,,1,0
+7,1,2,0,1,4,3,200.0,3,4
+3,3,2,0,0,1,1,160.0,3,0
+9,1,1,1,1,2,0,160.0,3,0
+7,0,0,0,0,3,3,200.0,3,4
+3,0,2,3,4,2,0,,2,1
+8,4,1,0,2,0,4,160.0,2,0
+2,0,2,2,3,3,0,180.0,0,2
+0,3,1,4,0,0,4,200.0,3,0
+0,3,0,3,0,3,3,220.0,0,2
+9,3,2,2,1,2,4,,1,4
+5,4,1,1,4,4,3,200.0,2,0
+1,4,2,3,1,1,3,160.0,1,4
+5,0,2,4,1,0,2,,3,4
+1,4,2,4,4,2,3,180.0,2,1
+5,4,2,1,3,4,4,,1,0
+2,4,1,1,1,2,2,,3,2
+8,0,0,3,1,0,2,180.0,1,2
+8,4,1,0,0,1,3,180.0,3,0
+3,0,1,1,4,2,0,,3,1
+6,0,1,0,2,3,0,180.0,2,1
+8,0,0,2,3,4,2,200.0,0,1
+8,2,2,4,3,2,3,180.0,3,2
+7,3,2,0,4,4,0,180.0,3,4
+7,0,2,4,0,3,3,,2,1
+3,2,0,0,0,1,3,200.0,0,2
+6,4,2,2,4,1,2,220.0,3,2
+9,4,0,1,0,3,2,220.0,3,4
+7,3,2,2,3,4,1,160.0,0,0
+9,4,2,1,3,2,0,180.0,1,0
+4,3,1,1,2,3,0,180.0,2,1
+7,4,0,4,4,0,0,200.0,0,1
+2,3,1,2,1,4,4,220.0,3,4
+6,4,1,0,1,1,3,160.0,3,1
+3,4,1,2,2,3,2,200.0,3,4
+4,4,0,4,2,1,0,180.0,3,2
+6,4,0,1,0,4,1,220.0,2,1
+2,4,2,4,2,1,0,160.0,3,2
+6,0,1,3,2,3,3,,0,3
+2,1,2,3,1,4,3,220.0,3,4
+2,2,1,0,0,0,2,160.0,1,3
+9,1,0,4,2,3,4,200.0,0,1
+5,1,0,0,2,2,2,,2,2
+4,3,0,0,0,3,0,160.0,0,1
+6,0,1,3,4,4,1,160.0,1,3
+1,3,0,0,0,3,2,180.0,2,1
+4,0,1,3,1,0,4,220.0,3,0
+5,0,2,1,4,0,2,180.0,1,3
+4,4,1,4,3,2,3,,2,1
+8,4,2,0,0,1,0,160.0,3,2
+1,4,1,3,1,4,0,180.0,0,1
+5,4,2,2,4,4,0,220.0,2,2
+9,3,0,0,0,1,0,,0,0
+6,4,2,1,2,0,0,200.0,3,1
+0,3,0,1,0,0,0,180.0,2,0
+5,1,0,2,3,3,1,,3,3
+3,1,2,3,0,2,4,200.0,1,2
+6,4,1,0,4,2,0,180.0,2,3
+5,4,1,3,4,2,4,,3,2
+8,3,1,1,0,3,0,,2,0
+0,4,1,3,4,2,2,180.0,0,4
+8,3,1,1,2,1,0,,2,1
+0,4,0,3,0,3,3,160.0,3,0
+3,1,1,2,2,1,1,180.0,2,2
+6,0,0,4,2,3,2,,1,2
+9,4,0,2,1,2,2,200.0,2,2
+8,4,0,2,0,1,3,200.0,0,2
+8,3,2,4,4,1,0,160.0,2,1
+2,1,2,4,2,1,1,180.0,3,3
+0,4,0,0,1,3,2,,3,4
+7,3,2,0,0,4,1,,2,1
+6,4,1,2,0,2,2,200.0,2,2
+0,4,1,2,3,1,0,160.0,1,1
+2,2,0,1,3,4,2,200.0,3,0
+4,0,1,1,2,2,2,200.0,3,2
+0,2,0,0,3,2,4,160.0,0,4
+9,1,0,0,2,1,0,180.0,2,2
+6,4,1,1,4,1,3,,3,4
+2,1,2,1,2,3,3,180.0,0,4
+4,3,1,3,3,4,0,220.0,3,3
+1,4,1,3,4,4,3,220.0,3,3
+2,2,0,1,3,1,0,220.0,3,1
+1,2,0,3,2,2,3,160.0,0,1
+6,2,0,4,1,1,4,200.0,3,4
+8,1,0,0,0,2,3,180.0,3,2
+2,4,2,0,3,2,2,,3,0
+3,4,2,1,2,1,0,220.0,3,0
+1,3,2,2,4,0,1,180.0,3,2
+9,4,0,1,3,4,1,220.0,1,2
+3,1,0,3,3,2,0,220.0,0,3
+5,3,0,2,0,2,4,,3,0
+5,2,2,3,2,0,3,160.0,3,4
+4,0,0,4,1,3,4,200.0,0,1
+8,1,1,3,4,0,1,160.0,0,3
+6,1,1,4,2,0,0,180.0,0,0
+2,4,0,4,4,2,0,160.0,0,2
+7,4,1,3,3,4,4,180.0,2,0
+9,1,1,3,0,0,4,180.0,3,4
+1,1,2,4,0,3,3,200.0,2,3
+6,2,0,2,1,1,2,,3,2
+3,2,0,4,0,0,2,200.0,3,4
+5,3,2,0,3,0,3,160.0,3,1
+9,0,1,4,1,3,2,180.0,3,3
+7,4,1,2,2,4,1,220.0,0,4
+2,0,0,0,0,0,2,220.0,2,4
+4,3,1,1,1,0,3,180.0,0,2
+7,2,2,1,3,4,2,200.0,3,1
+9,4,2,2,4,3,0,,2,4
+7,2,0,4,4,0,4,200.0,0,3
+9,4,2,3,3,4,1,180.0,3,4
+9,2,2,2,3,0,0,180.0,0,0
+0,4,0,0,4,1,0,,3,3
+1,4,2,0,1,2,3,160.0,2,3
+5,4,2,1,4,1,4,160.0,3,4
+0,3,2,0,3,0,4,,2,2
+2,4,1,2,0,3,1,160.0,3,3
+0,4,0,0,2,2,3,220.0,2,0
+8,4,0,2,0,1,1,160.0,3,2
+8,0,0,3,0,4,2,160.0,3,2
+5,1,1,1,3,3,0,160.0,1,2
+7,0,1,0,4,1,1,220.0,2,3
+1,4,0,2,1,4,0,160.0,2,2
+5,4,1,4,0,0,3,220.0,0,4
+9,2,0,1,4,4,2,,3,2
+3,4,1,3,1,1,3,200.0,1,0
+1,4,2,2,0,1,2,,3,1
+1,4,2,3,1,0,2,200.0,0,0
+9,4,0,3,4,4,0,,1,3
+9,4,1,0,2,4,3,200.0,3,2
+4,3,1,0,4,0,3,200.0,1,2
+5,4,2,2,3,4,1,180.0,2,4
+9,1,2,4,1,0,3,200.0,2,2
+8,1,1,2,2,3,1,200.0,0,0
+2,4,1,4,1,1,4,180.0,3,3
+3,3,1,3,1,3,4,160.0,3,1
+5,2,1,1,0,2,4,160.0,1,2
+6,4,1,2,3,2,3,180.0,0,1
+8,1,1,2,1,2,3,220.0,3,2
+7,2,0,4,4,0,1,200.0,2,3
+9,4,1,3,4,4,2,200.0,1,0
+6,2,2,3,0,3,1,180.0,3,3
+9,0,0,4,3,3,4,180.0,2,1
+1,1,1,3,3,3,1,220.0,0,2
+8,4,2,0,4,3,2,160.0,3,1
+1,4,0,1,2,2,3,,2,0
+4,3,2,2,0,3,1,160.0,3,3
+1,4,1,1,0,4,4,200.0,3,1
+4,4,1,2,4,2,4,180.0,0,1
+4,3,1,0,4,3,3,220.0,2,0
+6,3,1,3,2,0,1,160.0,1,2
+9,4,0,4,2,1,2,220.0,2,1
+7,2,0,0,3,1,3,160.0,3,0
+1,2,2,1,0,1,1,200.0,0,2
+8,3,1,4,0,2,0,,0,2
+4,2,2,3,4,3,4,220.0,1,3
+9,0,0,0,3,2,2,220.0,0,0
+3,3,1,4,0,4,2,,0,2
+5,3,1,0,3,0,2,220.0,0,3
+6,4,0,0,3,0,4,220.0,0,4
+7,2,0,3,4,1,1,160.0,0,0
+0,3,0,2,3,1,3,160.0,3,4
+6,0,0,4,2,1,1,,2,2
+3,4,0,3,2,3,3,200.0,3,0
+5,4,1,0,1,4,2,220.0,0,3
+3,3,0,3,4,4,1,200.0,3,2
+1,0,1,2,1,4,2,,3,0
+4,1,1,4,2,4,0,,3,0
+7,0,0,2,1,1,2,160.0,0,4
+2,0,0,1,4,0,2,220.0,3,2
+4,4,1,4,4,1,3,180.0,0,3
+2,4,0,2,3,4,0,,1,3
+5,1,0,0,0,1,2,220.0,1,2
+9,2,0,4,3,4,2,200.0,1,2
+0,2,2,4,4,2,0,160.0,3,1
+8,0,1,3,2,0,0,200.0,1,4
+4,4,2,0,2,2,1,,3,2
+7,4,0,1,3,3,3,,3,2
+3,2,2,2,4,1,0,200.0,3,1
+7,1,0,3,2,3,0,,0,1
+5,4,2,2,4,1,4,220.0,2,0
+2,1,0,1,2,2,0,,0,3
+3,3,2,1,4,4,3,160.0,0,4
+8,3,2,4,1,4,2,220.0,0,0
+8,4,2,1,4,1,2,180.0,0,2
+4,2,1,2,4,4,2,,2,1
+5,4,2,0,3,2,2,,1,3
+9,4,1,0,1,4,4,160.0,0,0
+5,3,0,4,0,2,0,160.0,3,3
+2,0,2,2,3,3,2,200.0,3,1
+7,0,0,2,0,2,1,200.0,3,0
+8,2,0,1,2,0,2,200.0,3,0
+7,4,2,2,0,0,0,160.0,0,3
+7,1,1,3,4,0,2,200.0,2,1
+7,4,2,1,0,1,4,200.0,1,2
+8,0,0,3,3,1,3,180.0,3,0
+6,0,0,4,3,1,3,200.0,1,2
+1,3,2,0,0,2,0,,2,1
+2,4,1,4,3,1,3,160.0,3,0
+6,4,1,0,3,3,3,220.0,1,0
+2,0,0,4,0,0,1,180.0,2,2
+3,1,0,2,1,2,0,160.0,1,4
+5,2,1,3,1,0,0,160.0,0,2
+5,2,2,0,2,1,3,,2,2
+0,4,0,1,3,2,3,200.0,1,4
+5,2,1,3,0,4,3,,0,1
+8,0,0,1,3,3,4,200.0,0,1
+9,0,2,3,4,1,2,200.0,2,0
+4,4,1,3,3,1,4,160.0,3,3
+0,4,0,4,3,3,0,200.0,3,3
+4,3,2,0,1,3,1,180.0,2,0
+2,4,0,0,0,4,2,180.0,0,3
+4,1,2,3,3,1,1,180.0,0,2
+4,2,2,2,1,1,0,160.0,2,2
+0,4,1,2,2,0,0,,3,4
+3,4,2,1,1,2,1,220.0,3,4
+7,3,0,1,1,2,1,200.0,1,0
+5,4,2,4,1,0,1,220.0,2,0
+5,0,2,3,3,2,0,,3,0
+8,2,1,1,3,3,3,,3,2
+0,4,2,1,2,2,1,160.0,0,3
+8,4,2,3,4,2,2,180.0,1,0
+9,2,0,4,4,0,0,180.0,2,0
+9,0,1,1,4,4,4,,0,2
+8,1,1,4,2,2,4,160.0,0,2
+0,3,1,0,4,2,2,160.0,3,2
+8,2,2,4,4,4,3,200.0,3,3
+5,2,1,2,1,0,1,180.0,2,0
+6,1,2,2,3,4,0,,2,1
+1,2,2,4,3,0,1,220.0,2,1
+4,0,0,2,1,3,0,180.0,0,0
+1,0,0,0,1,0,4,200.0,3,0
+0,1,0,3,1,3,1,160.0,1,0
+1,3,0,2,3,3,2,,0,0
+9,4,0,2,4,0,3,180.0,1,3
+2,4,2,4,1,1,2,220.0,3,1
+4,4,2,0,2,0,3,200.0,3,4
+7,2,1,3,1,2,1,200.0,2,1
+0,4,2,4,0,2,1,180.0,1,1
+4,1,2,4,1,1,3,220.0,0,2
+1,1,0,0,3,3,4,200.0,1,0
+9,3,2,3,1,1,0,,3,0
+3,4,0,0,0,2,2,200.0,2,0
+6,0,1,3,2,1,2,220.0,1,2
+7,4,1,0,4,0,2,160.0,3,3
+6,2,2,4,1,1,1,160.0,0,3
+4,0,1,4,0,3,2,180.0,3,4
+9,1,2,1,0,0,0,220.0,0,3
+9,4,1,2,2,4,0,200.0,2,3
+1,4,0,0,3,2,3,200.0,0,0
+5,3,0,1,1,2,1,160.0,0,1
+1,4,0,2,0,1,0,160.0,0,3
+5,3,0,0,2,0,4,,0,3
+5,2,2,3,4,4,1,160.0,2,2
+7,4,1,2,0,0,1,,3,4
+1,4,2,4,2,2,0,200.0,1,2
+3,4,0,1,3,0,4,,3,0
+8,4,2,2,3,4,3,,1,1
+8,4,1,2,0,1,0,180.0,1,4
+1,2,2,4,0,3,4,160.0,3,2
+1,0,1,0,1,0,1,,2,3
+6,2,2,3,2,3,4,200.0,3,3
+7,3,1,4,0,2,1,220.0,2,4
+1,2,1,3,1,1,0,,1,3
+6,3,0,0,1,1,0,160.0,2,2
+5,4,1,2,0,0,2,180.0,3,2
+9,0,0,3,3,1,2,200.0,3,3
+9,4,0,1,2,0,2,180.0,3,3
+5,1,0,1,2,0,0,220.0,1,0
+0,4,2,4,3,3,3,,3,1
+6,3,2,0,0,1,0,,1,4
+6,4,2,4,2,0,4,160.0,3,2
+5,4,2,4,0,3,0,,1,4
+3,0,1,4,0,4,0,200.0,3,0
+2,4,1,1,1,3,1,220.0,3,2

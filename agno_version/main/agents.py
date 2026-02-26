@@ -15,7 +15,6 @@ analysis_agent = Agent(
     tools=analysis_tools,
     instructions=analysis_instruction,
     add_history_to_context=True,
-    num_history_runs=5
 )
 
 preprocessing_agent = Agent(
@@ -26,43 +25,23 @@ preprocessing_agent = Agent(
     instructions=preprocessing_instruction,
     tools=preprocessing_tools,
     add_history_to_context=True,
-    num_history_runs=5
-)
-
-training_agent = Agent(
-    name="training_agent",
-    role="Train different machine learning models ",
-    model=Gemini(id="gemini-2.5-flash-lite" , api_key=settings.gemini_api_key),
-    tools=training_tools,
-    instructions=training_instruction,
-    add_history_to_context=True,
-    num_history_runs=5
-)
-
-evaluation_agent = Agent(
-    name="evaluation_agent",
-    role="Evaluate machine learning models and test",
-    model=Gemini(id="gemini-2.5-flash-lite" , api_key=settings.gemini_api_key),
-    tools=evaluation_tools,
-    instructions=evaluation_instrcution,
-    add_history_to_context=True,
-    num_history_runs=5
 )
 
 Trainer_Agent = Agent(
-    model = OpenAIChat(id = 'gpt-4.1-nano', api_key= settings.openai_api_key),
+    model = OpenAIChat(id ='gpt-4.1-nano', api_key=settings.openai_api_key),
     name= "Trainer_Agent",
     role= "Agent that trains ML models accordingly to the need of the user and input/output features specifications",
-    tools = [training_tools],
+    tools = training_tools,
     instructions = training_instruction,
-    markdown = True
+    markdown = True, 
+    add_history_to_context=True
 )
 
 Evaluator_Agent = Agent(
-    model = OpenAIChat(id ='gpt-4.1-nano', api_key= settings.openai_api_key),
+    model = OpenAIChat(id ='gpt-4.1-nano', api_key=settings.openai_api_key),
     name = "Eval_Agent",
     role= "Agent that evaluates performances of the model outputed by the Trainer Agent, and returns the appropraiate report with the right metrics. He also Can save models and save reports, by creating files, JSON, CSV, PICKEL, JOBLIB, ....",
-    tools = [EvaluationTools],
+    tools = evaluation_tools,
     instructions = evaluation_instrcution,
     add_history_to_context = True,
     markdown = True
