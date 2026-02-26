@@ -3,6 +3,7 @@ from .prompts import *
 from agno.agent import Agent
 from agno.models.google import Gemini
 from agno.models.openai import OpenAIChat
+from agno.models.ollama import Ollama
 from .config import Settings
 
 settings = Settings()
@@ -48,4 +49,21 @@ evaluation_agent = Agent(
     num_history_runs=5
 )
 
+Trainer_Agent = Agent(
+    model = OpenAIChat(id = 'gpt-4.1-nano', api_key= settings.openai_api_key),
+    name= "Trainer_Agent",
+    role= "Agent that trains ML models accordingly to the need of the user and input/output features specifications",
+    tools = [training_tools],
+    instructions = training_instruction,
+    markdown = True
+)
 
+Evaluator_Agent = Agent(
+    model = OpenAIChat(id ='gpt-4.1-nano', api_key= settings.openai_api_key),
+    name = "Eval_Agent",
+    role= "Agent that evaluates performances of the model outputed by the Trainer Agent, and returns the appropraiate report with the right metrics. He also Can save models and save reports, by creating files, JSON, CSV, PICKEL, JOBLIB, ....",
+    tools = [EvaluationTools],
+    instructions = evaluation_instrcution,
+    add_history_to_context = True,
+    markdown = True
+)
