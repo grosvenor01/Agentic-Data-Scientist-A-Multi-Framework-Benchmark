@@ -32,6 +32,7 @@ from services.model_savers import save_model_with_joblib , save_model_with_pickl
 import pickle 
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib , json
+from typing import Optional
 
 def EDA(file_path:str , output_dir:str="figs/"):
     """
@@ -121,7 +122,15 @@ preprocessing_tools = [run_python_script]
 def dataLoader(csv_path: str, target_col: str, test_size=0.2, random_state=42, shuffle=True):
     """
         This tool splits dataframe into X_train, y_train, x_test, y_test and saves them into npy files
+        csv_path : the path to the preprocessed CSV file (relative or absolute)
+        target_col : the name of the target column
     """
+    import os
+    
+    # Ensure part directory exists
+    part_dir = "part"
+    os.makedirs(part_dir, exist_ok=True)
+    
     df = pd.read_csv(csv_path)
     # Separate features and target
     X = df.drop(columns=[target_col])
@@ -138,11 +147,25 @@ def dataLoader(csv_path: str, target_col: str, test_size=0.2, random_state=42, s
         random_state=random_state,
         shuffle=shuffle
     )
-    np.save("part/x_train.npy", X_train)
-    np.save("part/y_train.npy", y_train)
-    np.save("part/x_test.npy", X_test)
-    np.save("part/y_test.npy", y_test)
-    return "Splits saved in directory part/x_train.npy, part/y_train.npy, part/x_test.npy, part/y_test.npy"
+    
+    # Use os.path.join for proper path construction
+    x_train_path = os.path.join(part_dir, "x_train.npy")
+    y_train_path = os.path.join(part_dir, "y_train.npy")
+    x_test_path = os.path.join(part_dir, "x_test.npy")
+    y_test_path = os.path.join(part_dir, "y_test.npy")
+    
+    np.save(x_train_path, X_train)
+    np.save(y_train_path, y_train)
+    np.save(x_test_path, X_test)
+    np.save(y_test_path, y_test)
+    
+    return {
+        "x_train_path": x_train_path,
+        "y_train_path": y_train_path,
+        "x_test_path": x_test_path,
+        "y_test_path": y_test_path,
+        "message": "Data splits saved successfully"
+    }
 
 class MLTools(Toolkit):
     def __init__(self, **kwargs):
@@ -160,15 +183,22 @@ class MLTools(Toolkit):
         ]
         super().__init__(name="Regression_tools", tools=tools, instructions= "Use these tools to perform Machine learning tasks, such as Regression Analaysis, Classification, or clustering, chose the appropriate tool function to your use case based on the type of data you have and the user intents, for each ML model there are default haper parameters set, you can change them based on your specefic use case by passing the as arguments using the same parameters name.", **kwargs)
 
-    def performLinearRegression(self, x_train_path, y_train_path, model_output_path="output/linear_regression_model.joblib", history_output_path="output/linear_regression_history.json"):
+    def performLinearRegression(self, x_train_path, y_train_path, model_name="linear_regression"):
         """ This function performs a Linear regression
         Input: paths to training data and target features
         Output: Trained Linear regression model saved to joblib file and training history
         """
         import os
         
-        x = np.load(x_train_path)
-        y = np.load(y_train_path)
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
+        x = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         x = np.asarray(x)
         y = np.asarray(y).ravel()
 
@@ -182,12 +212,10 @@ class MLTools(Toolkit):
         score = float(model.score(x, y))
         
         # Save model
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         # Create and save training history
         history = {"model_type": "LinearRegression", "score": score, "intercept": float(model.intercept_), "coefficients": model.coef_.tolist()}
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -198,14 +226,22 @@ class MLTools(Toolkit):
             "score_on": "train"
         }
 
-    def performPolynomialRegression(self, x_train_path, y_train_path, degree=2, include_bias=True, model_output_path="output/polynomial_regression_model.joblib", history_output_path="output/polynomial_regression_history.json"):
+    def performPolynomialRegression(self, x_train_path, y_train_path, degree=2, include_bias=True, model_name="polynomial_regression"):
         """Performs Polynomial Regression (PolynomialFeatures + LinearRegression).
         Input: paths to training data X, target y, polynomial degree
         Output: trained pipeline model saved to joblib file and training history
         """
+        import os
         
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
+        X = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()     
 
@@ -221,11 +257,9 @@ class MLTools(Toolkit):
         # Compute score on training data
         score = float(model.score(X, y))
         
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         history = {"model_type": "PolynomialRegression", "score": score, "degree": degree, "include_bias": include_bias}
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -236,16 +270,23 @@ class MLTools(Toolkit):
             "score_on": "train"
         }
 
-    def performSVR(self, x_train_path, y_train_path, kernel="rbf", C=1.0, epsilon=0.1, gamma="scale", model_output_path="output/svr_model.joblib", history_output_path="output/svr_history.json"):
+    def performSVR(self, x_train_path, y_train_path, kernel="rbf", C=1.0, epsilon=0.1, gamma="scale", model_name="svr"):
         """Performs Support Vector Regression (SVR).
         Input: paths to training data X, target y, SVR hyperparameters
         Output: trained SVR pipeline model (with scaling) saved to joblib file and training history
         """
         import os
         
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()      # make y 1D
 
@@ -263,12 +304,10 @@ class MLTools(Toolkit):
         score = float(model.score(X, y))
         
         # Save model
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         # Create and save training history
         history = {"model_type": "SVR", "score": score, "kernel": kernel, "C": C, "epsilon": epsilon, "gamma": gamma}
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -288,8 +327,7 @@ class MLTools(Toolkit):
         max_depth=3,
         subsample=1.0,
         random_state=42,
-        model_output_path="output/gradient_boosting_regression_model.joblib",
-        history_output_path="output/gradient_boosting_regression_history.json"
+        model_name="gradient_boosting_regression"
     ):
         """Performs Gradient Boosting Regression (sklearn).
         Input: paths to training data X, target y, GBR hyperparameters
@@ -297,9 +335,16 @@ class MLTools(Toolkit):
         """
         import os
         
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -319,7 +364,6 @@ class MLTools(Toolkit):
         score = float(model.score(X, y))
         
         # Save model
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         # Create and save training history
@@ -331,7 +375,6 @@ class MLTools(Toolkit):
             "max_depth": max_depth,
             "subsample": subsample
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -354,7 +397,8 @@ class MLTools(Toolkit):
         min_samples_leaf=1,
         max_features="sqrt",
         class_weight=None,
-        random_state=42
+        random_state=42,
+        model_name="random_forest_classification"
     ):
         """Performs Random Forest Classification.
         Loads X/y from .npy paths, trains a RandomForestClassifier, saves model with joblib,
@@ -364,8 +408,11 @@ class MLTools(Toolkit):
         Otherwise: score is computed on training data.
         """
 
-        model_output_path="output/random_forest_classification_model.joblib"
-        history_output_path="output/random_forest_classification_history.json"
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
         # ---- Load train data ----
         X_train = np.load(x_train_path)
         y_train = np.load(y_train_path, allow_pickle=True)
@@ -408,7 +455,6 @@ class MLTools(Toolkit):
             score_on = "train"
 
         # ---- Save model (joblib) ----
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
 
         # ---- Save "history" (metadata) ----
@@ -426,7 +472,6 @@ class MLTools(Toolkit):
                 "random_state": random_state
             }
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
 
@@ -446,8 +491,7 @@ class MLTools(Toolkit):
         max_depth=3,
         subsample=1.0,
         random_state=42,
-        model_output_path="output/gradient_boosting_classification_model.joblib",
-        history_output_path="output/gradient_boosting_classification_history.json"
+        model_name="gradient_boosting_classification"
     ):
         """Performs Gradient Boosting Classification (sklearn).
         Input: paths to training data X, target y, GBC hyperparameters
@@ -455,9 +499,16 @@ class MLTools(Toolkit):
         """
         import os
         
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -477,7 +528,6 @@ class MLTools(Toolkit):
         score = float(model.score(X, y))
         
         # Save model
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         # Create and save training history
@@ -489,7 +539,6 @@ class MLTools(Toolkit):
             "max_depth": max_depth,
             "subsample": subsample
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -510,8 +559,7 @@ class MLTools(Toolkit):
         max_iter=1000,
         class_weight=None,
         random_state=42,
-        model_output_path="output/logistic_regression_classification_model.joblib",
-        history_output_path="output/logistic_regression_classification_history.json"
+        model_name="logistic_regression_classification"
     ):
         """Performs Logistic Regression Classification.
         Input: paths to training data X, target y, LogisticRegression hyperparameters
@@ -519,9 +567,16 @@ class MLTools(Toolkit):
         """
         import os
         
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -546,7 +601,6 @@ class MLTools(Toolkit):
         score = float(model.score(X, y))
         
         # Save model
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         # Create and save training history
@@ -558,7 +612,6 @@ class MLTools(Toolkit):
             "solver": solver,
             "max_iter": max_iter
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -580,16 +633,23 @@ class MLTools(Toolkit):
         probability=True,
         class_weight=None,
         random_state=42,
-        model_output_path="output/svm_classification_model.joblib",
-        history_output_path="output/svm_classification_history.json"
+        model_name="svm_classification"
     ):
         """Performs SVM Classification (SVC).
         Input: paths to training data X, target y, SVM hyperparameters
         Output: trained SVM pipeline model (with scaling) saved to joblib file and training history
         """
+        import os
         
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
+        X = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  
 
@@ -613,7 +673,6 @@ class MLTools(Toolkit):
         # Compute score on training data
         score = float(model.score(X, y))
         
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         history = {
             "model_type": "SVC",
@@ -624,7 +683,6 @@ class MLTools(Toolkit):
             "degree": degree,
             "probability": probability
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -643,15 +701,23 @@ class MLTools(Toolkit):
         weights="uniform",
         algorithm="auto",
         p=2,
-        model_output_path="output/knn_classification_model.joblib",
-        history_output_path="output/knn_classification_history.json"
+        model_name="knn_classification"
     ):
         """Performs K-Nearest Neighbors Classification.
         Input: paths to training data X, target y, KNN hyperparameters
         Output: trained KNN pipeline model (with scaling) saved to joblib file and training history
         """
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        import os
+        
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
+        X = np.load(x_train_path , allow_pickle=True)
+        y = np.load(y_train_path , allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()
 
@@ -673,7 +739,6 @@ class MLTools(Toolkit):
         # Compute score on training data
         score = float(model.score(X, y))
         
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         history = {
             "model_type": "KNeighborsClassifier",
@@ -683,7 +748,6 @@ class MLTools(Toolkit):
             "algorithm": algorithm,
             "p": p
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -701,14 +765,22 @@ class MLTools(Toolkit):
         init="k-means++",
         max_iter=300,
         random_state=42,
-        model_output_path="output/kmeans_clustering_model.joblib",
-        history_output_path="output/kmeans_clustering_history.json"
+        model_name="kmeans_clustering"
     ):
         """Performs K-Means Clustering.
         Input: path to data X, Kmeans hyperparameters
         Output: trained KMeans pipeline model (with scaling) saved to joblib file and training history
         """
-        X = np.load(x_train_path)
+        import os
+        
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
+        X = np.load(x_train_path , allow_pickle=True)
         X = np.asarray(X)
 
         if X.ndim == 1:
@@ -732,7 +804,6 @@ class MLTools(Toolkit):
         score = float(silhouette_score(X, labels))
         
         # Save model
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         # Create and save training history
@@ -746,7 +817,6 @@ class MLTools(Toolkit):
             "inertia": float(kmeans_est.inertia_) if hasattr(kmeans_est, 'inertia_') else None,
             "n_iter": int(kmeans_est.n_iter_) if hasattr(kmeans_est, 'n_iter_') else None
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -762,8 +832,7 @@ class MLTools(Toolkit):
         x_train_path,
         n_components=2,
         random_state=42,
-        model_output_path="output/pca_model.joblib",
-        history_output_path="output/pca_history.json"
+        model_name="pca"
     ):
         """Performs Principal Component Analysis (PCA).
         Input: path to data X
@@ -771,8 +840,15 @@ class MLTools(Toolkit):
         """
         import os
         
+        # Setup output directory
+        output_dir = "output"
+        os.makedirs(output_dir, exist_ok=True)
+        
+        model_output_path = os.path.join(output_dir, f"{model_name}_model.joblib")
+        history_output_path = os.path.join(output_dir, f"{model_name}_history.json")
+        
         # Load data from path
-        X = np.load(x_train_path)
+        X = np.load(x_train_path , allow_pickle=True)
         X = np.asarray(X)
 
         if X.ndim == 1:
@@ -793,7 +869,6 @@ class MLTools(Toolkit):
         score = float(np.sum(pca_est.explained_variance_ratio_)) if hasattr(pca_est, 'explained_variance_ratio_') else 0.0
         
         # Save model
-        os.makedirs(os.path.dirname(model_output_path), exist_ok=True)
         joblib.dump(model, model_output_path)
         
         # Create and save training history
@@ -803,7 +878,6 @@ class MLTools(Toolkit):
             "n_components": n_components,
             "explained_variance_ratio": pca_est.explained_variance_ratio_.tolist() if hasattr(pca_est, 'explained_variance_ratio_') else None
         }
-        os.makedirs(os.path.dirname(history_output_path), exist_ok=True)
         with open(history_output_path, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
         
@@ -834,7 +908,7 @@ class EvaluationTools(Toolkit):
         """Computes Mean Absolute Error (MAE) for regression.
         Loads model and test data, makes predictions, returns MAE as string.
         """
-        X_test = np.load(x_test_path)
+        X_test = np.load(x_test_path, allow_pickle=True)
         y_test = np.load(y_test_path , allow_pickle=True)
         model = joblib.load(model_path)
         
@@ -847,7 +921,7 @@ class EvaluationTools(Toolkit):
         """Computes Root Mean Squared Error (RMSE) for regression.
         Loads model and test data, makes predictions, returns RMSE as string.
         """
-        X_test = np.load(x_test_path)
+        X_test = np.load(x_test_path, allow_pickle=True)
         y_test = np.load(y_test_path , allow_pickle=True)
         model = joblib.load(model_path)
         
@@ -860,7 +934,7 @@ class EvaluationTools(Toolkit):
         """Computes R^2 score for regression.
         Loads model and test data, makes predictions, returns R^2 as string.
         """
-        X_test = np.load(x_test_path)
+        X_test = np.load(x_test_path, allow_pickle=True)
         y_test = np.load(y_test_path , allow_pickle=True)
         model = joblib.load(model_path)
         
@@ -873,7 +947,7 @@ class EvaluationTools(Toolkit):
         """Computes Accuracy for classification.
         Loads model and test data, makes predictions, returns accuracy as string.
         """
-        X_test = np.load(x_test_path)
+        X_test = np.load(x_test_path, allow_pickle=True)
         y_test = np.load(y_test_path , allow_pickle=True)
         model = joblib.load(model_path)
         
@@ -887,7 +961,7 @@ class EvaluationTools(Toolkit):
         Loads model and test data, makes predictions, returns F1 as string.
         average: 'binary', 'macro', 'micro', 'weighted' (default)
         """
-        X_test = np.load(x_test_path)
+        X_test = np.load(x_test_path, allow_pickle=True)
         y_test = np.load(y_test_path , allow_pickle=True)
         model = joblib.load(model_path)
         
@@ -900,7 +974,7 @@ class EvaluationTools(Toolkit):
         """Computes ROC-AUC for classification.
         Loads model and test data, gets probability predictions, returns ROC-AUC as string.
         """
-        X_test = np.load(x_test_path)
+        X_test = np.load(x_test_path, allow_pickle=True)
         y_test = np.load(y_test_path , allow_pickle=True)
         model = joblib.load(model_path)
         
@@ -923,7 +997,7 @@ class EvaluationTools(Toolkit):
         """Computes Silhouette Score for clustering.
         Loads model and test data, makes cluster predictions, returns silhouette score as string.
         """
-        X_test = np.load(x_test_path)
+        X_test = np.load(x_test_path, allow_pickle=True)
         model = joblib.load(model_path)
         
         labels = model.predict(X_test)

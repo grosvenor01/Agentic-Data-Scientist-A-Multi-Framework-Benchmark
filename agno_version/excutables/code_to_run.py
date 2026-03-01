@@ -1,59 +1,56 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.compose import ColumnTransformer
 
-# Load the dataset
-file_path = r"C:\Users\BUYMORE\Desktop\Github Proj\ven\All\Data Science Agent\datasets\healthcare_messy_data.csv"
+# Load dataset
+file_path = 'datasets/results/cleaned_healthcare_data.csv'
 df = pd.read_csv(file_path)
 
-# Drop irrelevant columns based on prior analysis
-columns_to_drop = ['patient_id', 'record_number']
-df.drop(columns=columns_to_drop, inplace=True, errors='ignore')
+# Inspection
+print('Shape:', df.shape)
+print('Data types:', df.dtypes)
+print('Missing values:', df.isnull().sum())
 
-# Handle missing values for numerical columns
-numeric_cols = df.select_dtypes(include=['number']).columns
+# Drop identifier columns if any
+identifier_columns = [] # Update this based on actual identifiers
+if identifier_columns:
+    df.drop(columns=identifier_columns, inplace=True)
 
-df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].median())
+# Handle missing values
+for column in df.columns:
+    if df[column].isnull().sum() > 0:
+        if df[column].dtype == 'object':
+            df[column].fillna(df[column].mode()[0], inplace=True)  # fill with mode for categorical
+        else:
+            df[column].fillna(df[column].median(), inplace=True)  # fill with median for numeric
 
-# Handle missing values for categorical columns
-categorical_cols = df.select_dtypes(include=['object']).columns
+# Standardize date columns if any
+for column in df.select_dtypes(include=['datetime64[ns]']).columns:
+    df[column] = pd.to_datetime(df[column])  # ensure all date columns are in datetime format
 
-df[categorical_cols] = df[categorical_cols].fillna(df[categorical_cols].mode().iloc[0])
+# Extract useful date features
+if 'date_column' in df.columns:
+    df['year'] = df['date_column'].dt.year
+    df['month'] = df['date_column'].dt.month
+    del df['date_column']  # drop original date column
 
-# Verify missing values are handled
-print("Remaining missing values:")
-print(df.isnull().sum())
+# Clean categorical text
+for column in df.select_dtypes(include=['object']):
+    df[column] = df[column].str.strip().str.lower()
 
-# Define preprocessing for numerical and categorical data
-preprocessor = ColumnTransformer(
-    transformers=[
-        ('num', StandardScaler(), numeric_cols),
-        ('cat', OneHotEncoder(handle_unknown='ignore'), categorical_cols)
-    ])
+# Remove duplicates
+df.drop_duplicates(inplace=True)
 
-# Fit and transform the data
-try:
-    transformed_data = preprocessor.fit_transform(df)
-except Exception as e:
-    print("Error during transformation:", e)
+# Encode categorical features
+categorical_columns = df.select_dtypes(include=['object']).columns
+for column in categorical_columns:
+    df[column] = pd.factorize(df[column])[0]
 
-# Get feature names for encoded categorical variables
-try:
-    encoded_feature_names = preprocessor.named_transformers_['cat'].get_feature_names_out(categorical_cols)
-except AttributeError:
-    encoded_feature_names = []
+# Check if 'Medication' column exists and encode it
+if 'Medication' in df.columns:
+    df['Medication'] = pd.factorize(df['Medication'])[0]
 
-# Combine feature names
-feature_names = list(numeric_cols) + list(encoded_feature_names)
+# Save cleaned dataset
+output_path = 'datasets/results/cleaned_healthcare_data_encoded.csv'
+df.to_csv(output_path, index=False)
 
-# Convert the transformed data to DataFrame
-import numpy as np
-try:
-    df_processed = pd.DataFrame(transformed_data.toarray() if hasattr(transformed_data, "toarray") else transformed_data, columns=feature_names)
-except Exception as e:
-    print("Error converting transformed data to DataFrame:", e)
-
-# Save the preprocessed dataset
-output_path = r"C:\Users\BUYMORE\Desktop\Github Proj\ven\All\Data Science Agent\datasets\results\healthcare_cleaned_data.csv"
-df_processed.to_csv(output_path, index=False)
-print(f"Preprocessed data saved to {output_path}")
+# Output final saved path
+print('SAVED_PATH:', output_path)
