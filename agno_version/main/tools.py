@@ -34,11 +34,12 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib , json
 from typing import Optional
 
-def EDA(file_path:str , output_dir:str="figs/"):
+def EDA(file_path:str):
     """
     A tool to perform automated exploratory data analysis (EDA) on a CSV dataset.
     Generates summary statistics, missing values, unique counts, and visualizations.
     """
+    output_dir="figs/"
     df = pd.read_csv(file_path)
 
     col_info = df.dtypes.to_dict()
@@ -89,6 +90,7 @@ def EDA(file_path:str , output_dir:str="figs/"):
             "unique_counts": unique_counts,
             "statistics": stats,
             "charts": charts,
+            "dataset_head" : df.head(),
             "report": "Dataset structure, missing values, key patterns, correlations, and visualizations."
         }
         return report
@@ -96,7 +98,6 @@ analysis_tools = [EDA]
 
 def run_python_script(code: str) -> str:
     filename = "excutables/code_to_run.py"
-
     try:
         with open(filename, "w", encoding="utf-8") as f:
             f.write(code)
@@ -119,11 +120,10 @@ def run_python_script(code: str) -> str:
         return f"Unexpected error:\n{traceback.format_exc()}"
 preprocessing_tools = [run_python_script]
 
-def dataLoader(csv_path: str, target_col: str, test_size=0.2, random_state=42, shuffle=True):
-    """
-        This tool splits dataframe into X_train, y_train, x_test, y_test and saves them into npy files
-        csv_path : the path to the preprocessed CSV file (relative or absolute)
-        target_col : the name of the target column
+def dataLoader(csv_path: str, target_col: str, test_size: float = 0.2, random_state: int = 42, shuffle: bool = True) -> dict:
+    """This tool splits dataframe into X_train, y_train, x_test, y_test and saves them into npy files and then returns there paths
+    csv_path : the path to the preprocessed CSV file (relative or absolute)
+    target_col : the name of the target column
     """
     import os
     
@@ -183,7 +183,7 @@ class MLTools(Toolkit):
         ]
         super().__init__(name="Regression_tools", tools=tools, instructions= "Use these tools to perform Machine learning tasks, such as Regression Analaysis, Classification, or clustering, chose the appropriate tool function to your use case based on the type of data you have and the user intents, for each ML model there are default haper parameters set, you can change them based on your specefic use case by passing the as arguments using the same parameters name.", **kwargs)
 
-    def performLinearRegression(self, x_train_path, y_train_path, model_name="linear_regression"):
+    def performLinearRegression(self, x_train_path: str, y_train_path: str, model_name: str = "linear_regression"):
         """ This function performs a Linear regression
         Input: paths to training data and target features
         Output: Trained Linear regression model saved to joblib file and training history
@@ -226,7 +226,7 @@ class MLTools(Toolkit):
             "score_on": "train"
         }
 
-    def performPolynomialRegression(self, x_train_path, y_train_path, degree=2, include_bias=True, model_name="polynomial_regression"):
+    def performPolynomialRegression(self, x_train_path: str, y_train_path: str, degree: int = 2, include_bias: bool = True, model_name: str = "polynomial_regression") -> dict:
         """Performs Polynomial Regression (PolynomialFeatures + LinearRegression).
         Input: paths to training data X, target y, polynomial degree
         Output: trained pipeline model saved to joblib file and training history
@@ -270,7 +270,7 @@ class MLTools(Toolkit):
             "score_on": "train"
         }
 
-    def performSVR(self, x_train_path, y_train_path, kernel="rbf", C=1.0, epsilon=0.1, gamma="scale", model_name="svr"):
+    def performSVR(self, x_train_path: str, y_train_path: str, kernel: str = "rbf", C: float = 1.0, epsilon: float = 0.1, gamma: str = "scale", model_name: str = "svr") -> dict:
         """Performs Support Vector Regression (SVR).
         Input: paths to training data X, target y, SVR hyperparameters
         Output: trained SVR pipeline model (with scaling) saved to joblib file and training history
@@ -320,15 +320,15 @@ class MLTools(Toolkit):
 
     def performGradientBoostingRegression(
         self,
-        x_train_path,
-        y_train_path,
-        n_estimators=200,
-        learning_rate=0.1,
-        max_depth=3,
-        subsample=1.0,
-        random_state=42,
-        model_name="gradient_boosting_regression"
-    ):
+        x_train_path: str,
+        y_train_path: str,
+        n_estimators: int = 200,
+        learning_rate: float = 0.1,
+        max_depth: int = 3,
+        subsample: float = 1.0,
+        random_state: int = 42,
+        model_name: str = "gradient_boosting_regression"
+    ) -> dict:
         """Performs Gradient Boosting Regression (sklearn).
         Input: paths to training data X, target y, GBR hyperparameters
         Output: trained GradientBoostingRegressor model saved to joblib file and training history
@@ -391,15 +391,14 @@ class MLTools(Toolkit):
         y_train_path: str,
         x_test_path: str = None,
         y_test_path: str = None,
-        n_estimators=200,
-        max_depth=None,
-        min_samples_split=2,
-        min_samples_leaf=1,
-        max_features="sqrt",
-        class_weight=None,
-        random_state=42,
-        model_name="random_forest_classification"
-    ):
+        n_estimators: int = 200,
+        max_depth : int = None,
+        min_samples_split: int = 2,
+        min_samples_leaf: int = 1,
+        max_features: str = "sqrt",
+        random_state: int = 42,
+        model_name: str = "random_forest_classification"
+    ) -> dict:
         """Performs Random Forest Classification.
         Loads X/y from .npy paths, trains a RandomForestClassifier, saves model with joblib,
         saves training metadata ("history"), and returns a score.
@@ -407,7 +406,7 @@ class MLTools(Toolkit):
         If x_test_path and y_test_path are provided: score is computed on test data.
         Otherwise: score is computed on training data.
         """
-
+        class_weight = None,
         output_dir = "output"
         os.makedirs(output_dir, exist_ok=True)
         
@@ -484,15 +483,15 @@ class MLTools(Toolkit):
 
     def performGradientBoostingClassification(
         self,
-        x_train_path,
-        y_train_path,
-        n_estimators=200,
-        learning_rate=0.1,
-        max_depth=3,
-        subsample=1.0,
-        random_state=42,
-        model_name="gradient_boosting_classification"
-    ):
+        x_train_path: str,
+        y_train_path: str,
+        n_estimators: int = 200,
+        learning_rate: float = 0.1,
+        max_depth: int = 3,
+        subsample: float = 1.0,
+        random_state: int = 42,
+        model_name: str = "gradient_boosting_classification"
+    ) -> dict:
         """Performs Gradient Boosting Classification (sklearn).
         Input: paths to training data X, target y, GBC hyperparameters
         Output: trained GradientBoostingClassifier model saved to joblib file and training history
@@ -551,21 +550,20 @@ class MLTools(Toolkit):
 
     def performLogisticRegressionClassification(
         self,
-        x_train_path,
-        y_train_path,
-        penalty="l2",
-        C=1.0,
-        solver="lbfgs",
-        max_iter=1000,
-        class_weight=None,
-        random_state=42,
-        model_name="logistic_regression_classification"
-    ):
+        x_train_path: str,
+        y_train_path: str,
+        penalty: str = "l2",
+        C: float = 1.0,
+        solver: str = "lbfgs",
+        max_iter: int = 1000,
+        random_state: int = 42,
+        model_name: str = "logistic_regression_classification"
+    ) -> dict:
         """Performs Logistic Regression Classification.
         Input: paths to training data X, target y, LogisticRegression hyperparameters
         Output: trained LogisticRegression pipeline model (with scaling) saved to joblib file and training history
         """
-        import os
+        class_weight = None,
         
         # Setup output directory
         output_dir = "output"
@@ -624,22 +622,21 @@ class MLTools(Toolkit):
 
     def performSVMClassification(
         self,
-        x_train_path,
-        y_train_path,
-        kernel="rbf",
-        C=1.0,
-        gamma="scale",
-        degree=3,
-        probability=True,
-        class_weight=None,
-        random_state=42,
-        model_name="svm_classification"
-    ):
+        x_train_path: str,
+        y_train_path: str,
+        kernel: str = "rbf",
+        C: float = 1.0,
+        gamma: str = "scale",
+        degree: int = 3,
+        probability: bool = True,
+        random_state: int = 42,
+        model_name: str = "svm_classification"
+    ) -> dict:
         """Performs SVM Classification (SVC).
         Input: paths to training data X, target y, SVM hyperparameters
         Output: trained SVM pipeline model (with scaling) saved to joblib file and training history
         """
-        import os
+        class_weight = None,
         
         # Setup output directory
         output_dir = "output"
@@ -695,14 +692,14 @@ class MLTools(Toolkit):
     
     def performKNNClassification(
         self,
-        x_train_path,
-        y_train_path,
-        n_neighbors=5,
-        weights="uniform",
-        algorithm="auto",
-        p=2,
-        model_name="knn_classification"
-    ):
+        x_train_path: str,
+        y_train_path: str,
+        n_neighbors: int = 5,
+        weights: str = "uniform",
+        algorithm: str = "auto",
+        p: int = 2,
+        model_name: str = "knn_classification"
+    ) -> dict:
         """Performs K-Nearest Neighbors Classification.
         Input: paths to training data X, target y, KNN hyperparameters
         Output: trained KNN pipeline model (with scaling) saved to joblib file and training history
@@ -760,13 +757,13 @@ class MLTools(Toolkit):
     
     def performKMeansClustering(
         self,
-        x_train_path,
-        n_clusters=3,
-        init="k-means++",
-        max_iter=300,
-        random_state=42,
-        model_name="kmeans_clustering"
-    ):
+        x_train_path: str,
+        n_clusters: int = 3,
+        init: str = "k-means++",
+        max_iter: int = 300,
+        random_state: int = 42,
+        model_name: str = "kmeans_clustering"
+    ) -> dict:
         """Performs K-Means Clustering.
         Input: path to data X, Kmeans hyperparameters
         Output: trained KMeans pipeline model (with scaling) saved to joblib file and training history
@@ -829,11 +826,11 @@ class MLTools(Toolkit):
     
     def performPCA(
         self,
-        x_train_path,
-        n_components=2,
-        random_state=42,
-        model_name="pca"
-    ):
+        x_train_path: str,
+        n_components: int = 2,
+        random_state: int = 42,
+        model_name: str = "pca"
+    ) -> dict:
         """Performs Principal Component Analysis (PCA).
         Input: path to data X
         Output: trained PCA pipeline model (with scaling) saved to joblib file and training history
@@ -904,7 +901,7 @@ class EvaluationTools(Toolkit):
         ]
         super().__init__(name="Regression_tools", tools=tools, instructions= "Use these tools to perform Machine learning tasks, such as Regression Analaysis, Classification, or clustering, chose the appropriate tool function to your use case based on the type of data you have and the user intents, for each ML model there are default haper parameters set, you can change them based on your specefic use case by passing the as arguments using the same parameters name.", **kwargs)
 
-    def performMAERegression(self, x_test_path, y_test_path, model_path):
+    def performMAERegression(self, x_test_path: str, y_test_path: str, model_path: str) -> str:
         """Computes Mean Absolute Error (MAE) for regression.
         Loads model and test data, makes predictions, returns MAE as string.
         """
@@ -917,7 +914,7 @@ class EvaluationTools(Toolkit):
         
         return f"Mean Absolute Error (MAE): {mae}"
 
-    def performRMSERegression(self, x_test_path, y_test_path, model_path):
+    def performRMSERegression(self, x_test_path: str, y_test_path: str, model_path: str) -> str:
         """Computes Root Mean Squared Error (RMSE) for regression.
         Loads model and test data, makes predictions, returns RMSE as string.
         """
@@ -930,7 +927,7 @@ class EvaluationTools(Toolkit):
         
         return f"Root Mean Squared Error (RMSE): {rmse}"
 
-    def performR2Regression(self, x_test_path, y_test_path, model_path):
+    def performR2Regression(self, x_test_path: str, y_test_path: str, model_path: str) -> str:
         """Computes R^2 score for regression.
         Loads model and test data, makes predictions, returns R^2 as string.
         """
@@ -943,7 +940,7 @@ class EvaluationTools(Toolkit):
         
         return f"R^2 Score: {r2}"
 
-    def performAccuracyClassification(self, x_test_path, y_test_path, model_path):
+    def performAccuracyClassification(self, x_test_path: str, y_test_path: str, model_path: str) -> str:
         """Computes Accuracy for classification.
         Loads model and test data, makes predictions, returns accuracy as string.
         """
@@ -956,7 +953,7 @@ class EvaluationTools(Toolkit):
         
         return f"Accuracy: {accuracy}"
 
-    def performF1Classification(self, x_test_path, y_test_path, model_path, average="weighted"):
+    def performF1Classification(self, x_test_path: str, y_test_path: str, model_path: str, average: str = "weighted") -> str:
         """Computes F1 score for classification.
         Loads model and test data, makes predictions, returns F1 as string.
         average: 'binary', 'macro', 'micro', 'weighted' (default)
@@ -970,7 +967,7 @@ class EvaluationTools(Toolkit):
         
         return f"F1 Score ({average}): {f1}"
 
-    def performROCAUCClassification(self, x_test_path, y_test_path, model_path, multi_class="ovr"):
+    def performROCAUCClassification(self, x_test_path: str, y_test_path: str, model_path: str, multi_class: str = "ovr") -> str:
         """Computes ROC-AUC for classification.
         Loads model and test data, gets probability predictions, returns ROC-AUC as string.
         """
@@ -993,7 +990,7 @@ class EvaluationTools(Toolkit):
         
         return f"ROC-AUC Score: {roc_auc}"
 
-    def performSilhouetteScoreClustering(self, x_test_path, model_path, metric="euclidean"):
+    def performSilhouetteScoreClustering(self, x_test_path: str, model_path: str, metric: str = "euclidean") -> str:
         """Computes Silhouette Score for clustering.
         Loads model and test data, makes cluster predictions, returns silhouette score as string.
         """
@@ -1005,7 +1002,7 @@ class EvaluationTools(Toolkit):
         
         return f"Silhouette Score: {silhouette}"
 
-    def performPCAExplainedVariancePercent(self, model_path):
+    def performPCAExplainedVariancePercent(self, model_path: str) -> str:
         """Returns explained variance ratio (%) for each PCA component as string.
         Loads PCA model and returns variance percentages.
         """

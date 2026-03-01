@@ -5,7 +5,7 @@ from agno.models.google import Gemini
 from agno.models.openai import OpenAIChat
 from agno.models.ollama import Ollama
 from .config import Settings
-
+from .schema import *
 settings = Settings()
 analysis_agent = Agent(
     name="analysis_agent",
@@ -15,6 +15,7 @@ analysis_agent = Agent(
     tools=analysis_tools,
     instructions=analysis_instruction,
     markdown=True,
+    output_schema=AnalysisOutputSchema
 )
 
 preprocessing_agent = Agent(
@@ -25,6 +26,7 @@ preprocessing_agent = Agent(
     instructions=preprocessing_instruction,
     tools=preprocessing_tools,
     markdown=True,
+    output_schema=PreprocessingOutputSchema
 )
 
 Trainer_Agent = Agent(
@@ -34,7 +36,8 @@ Trainer_Agent = Agent(
     role="ML ENGINEER - Receives preprocessed dataset path + target column + task type → Splits data (train/test) → Trains selected model(s) → Returns model_path, history_path, and train_score",
     tools = training_tools,
     instructions = training_instruction,
-    markdown = True
+    markdown = True,
+    output_schema=TrainingOutputSchema
 )
 
 Evaluator_Agent = Agent(
@@ -44,6 +47,7 @@ Evaluator_Agent = Agent(
     role="QUALITY ASSANCER - Receives model_path + test_data paths → Detects task type → Runs appropriate metrics → Returns structured evaluation_report with performance_score and interpretation",
     tools = evaluation_tools,
     instructions = evaluation_instruction,
-    markdown = True
+    markdown = True,
+    output_schema=EvaluationOutputSchema
 )
 

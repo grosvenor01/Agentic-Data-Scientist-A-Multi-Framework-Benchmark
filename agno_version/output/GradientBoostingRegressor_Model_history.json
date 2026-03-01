@@ -1,0 +1,8 @@
+{
+  "model_type": "GradientBoostingRegressor",
+  "score": 0.31164120623288283,
+  "n_estimators": 100,
+  "learning_rate": 0.1,
+  "max_depth": 3,
+  "subsample": 1.0
+}

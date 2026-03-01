@@ -1,0 +1,8 @@
+{
+  "model_type": "SVR",
+  "score": -0.019781826695021154,
+  "kernel": "rbf",
+  "C": 1.0,
+  "epsilon": 0.1,
+  "gamma": "scale"
+}
