@@ -1,15 +1,18 @@
 from agno.team.team import Team
 from .agents import *
 from agno.models.openai import OpenAIChat
+from agno.models.ollama import Ollama
 from .prompts import supervisor_prompt
 from main.config import Settings
 from agno.db.sqlite import SqliteDb
 
 settings = Settings()
-db = SqliteDb(db_file="tmp/data.db")
+db = SqliteDb(db_file="tmp3/data.db")
 MAS = Team(
     name = "Multi-agent-system",
     model=OpenAIChat(id="gpt-4.1-nano" , api_key=settings.openai_api_key),
+    #model = Gemini(id= "gemini-2.0-flash" , api_key=settings.gemini_api_key),
+    #model=Ollama(id="llama3.1"),
     members=[analysis_agent , preprocessing_agent , Trainer_Agent ,Evaluator_Agent],
     instructions=supervisor_prompt,
     show_members_responses=True,

@@ -5,6 +5,7 @@ import os
 import sys, traceback
 import subprocess
 import numpy as np 
+import json
 from sklearn.model_selection import train_test_split
 from agno.tools import Toolkit
 import numpy as np
@@ -33,11 +34,13 @@ import pickle
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib , json
 
-def EDA(file_path:str , output_dir:str="figs/"):
+def EDA(file_path:str):
     """
     A tool to perform automated exploratory data analysis (EDA) on a CSV dataset.
     Generates summary statistics, missing values, unique counts, and visualizations.
     """
+    output_dir:str="Analysis/"
+    os.makedirs(os.path.dirname(output_dir), exist_ok=True)
     df = pd.read_csv(file_path)
 
     col_info = df.dtypes.to_dict()
@@ -53,6 +56,7 @@ def EDA(file_path:str , output_dir:str="figs/"):
     charts = []
 
     # Histograms for numeric columns
+
     for col in numeric_cols:
         plt.figure(figsize=(6,4))
         sns.histplot(df[col], kde=True)
@@ -90,15 +94,36 @@ def EDA(file_path:str , output_dir:str="figs/"):
             "charts": charts,
             "report": "Dataset structure, missing values, key patterns, correlations, and visualizations."
         }
+        print(f" ----> EDA report generated successfully. printing report...  {report}")
+
+        # Save report as TXT (safe for any object type)
+        report_path = os.path.join(output_dir, "EDA_report.txt")
+
+        with open(report_path, "w", encoding="utf-8") as f:
+            f.write(str(report))
+
+        print(f" ----> EDA report saved at {report_path}")
+
         return report
 analysis_tools = [EDA]
 
 def run_python_script(code: str) -> str:
-    filename = "excutables/code_to_run.py"
+    """
+    Execute a block of Python code by writing it to a temporary file first.
+    The code is saved under `executables/code_to_run.py` before execution so
+    that users can inspect or reuse the script later.
+    """
+    filename = "executables/code_to_run.py"
+
+    # ensure the target directory exists before attempting to write
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     try:
+        # save code to file for inspection or later reuse
         with open(filename, "w", encoding="utf-8") as f:
             f.write(code)
+
+        print(f" ----> code written to {filename}, executing now...")
 
         result = subprocess.run(
             [sys.executable, filename],
@@ -110,11 +135,13 @@ def run_python_script(code: str) -> str:
         stderr = result.stderr.strip()
 
         if result.returncode == 0:
+            print(f" ----> run_python_script function runned Very successfully. ")
             return stdout or "Execution successful (no output)."
-
+        print(f" --X--> run_python_script function runned UNsuccessfully. ")
         return f"Execution failed:\n{stderr}"
 
     except Exception:
+        print(f" --X--> run_python_script function runned UNsuccessfully. ")
         return f"Unexpected error:\n{traceback.format_exc()}"
 preprocessing_tools = [run_python_script]
 
@@ -138,6 +165,7 @@ def dataLoader(csv_path: str, target_col: str, test_size=0.2, random_state=42, s
         random_state=random_state,
         shuffle=shuffle
     )
+    os.makedirs("part", exist_ok=True)
     np.save("part/x_train.npy", X_train)
     np.save("part/y_train.npy", y_train)
     np.save("part/x_test.npy", X_test)
@@ -167,8 +195,8 @@ class MLTools(Toolkit):
         """
         import os
         
-        x = np.load(x_train_path)
-        y = np.load(y_train_path)
+        x = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         x = np.asarray(x)
         y = np.asarray(y).ravel()
 
@@ -204,8 +232,8 @@ class MLTools(Toolkit):
         Output: trained pipeline model saved to joblib file and training history
         """
         
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()     
 
@@ -244,8 +272,8 @@ class MLTools(Toolkit):
         import os
         
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()      # make y 1D
 
@@ -298,8 +326,8 @@ class MLTools(Toolkit):
         import os
         
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -367,7 +395,7 @@ class MLTools(Toolkit):
         model_output_path="output/random_forest_classification_model.joblib"
         history_output_path="output/random_forest_classification_history.json"
         # ---- Load train data ----
-        X_train = np.load(x_train_path)
+        X_train = np.load(x_train_path, allow_pickle=True)
         y_train = np.load(y_train_path, allow_pickle=True)
 
         X_train = np.asarray(X_train)
@@ -456,8 +484,8 @@ class MLTools(Toolkit):
         import os
         
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -520,8 +548,8 @@ class MLTools(Toolkit):
         import os
         
         # Load data from paths
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  # make y 1D
 
@@ -588,8 +616,8 @@ class MLTools(Toolkit):
         Output: trained SVM pipeline model (with scaling) saved to joblib file and training history
         """
         
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()  
 
@@ -650,8 +678,8 @@ class MLTools(Toolkit):
         Input: paths to training data X, target y, KNN hyperparameters
         Output: trained KNN pipeline model (with scaling) saved to joblib file and training history
         """
-        X = np.load(x_train_path)
-        y = np.load(y_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
+        y = np.load(y_train_path, allow_pickle=True)
         X = np.asarray(X)
         y = np.asarray(y).ravel()
 
@@ -708,7 +736,7 @@ class MLTools(Toolkit):
         Input: path to data X, Kmeans hyperparameters
         Output: trained KMeans pipeline model (with scaling) saved to joblib file and training history
         """
-        X = np.load(x_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
         X = np.asarray(X)
 
         if X.ndim == 1:
@@ -772,7 +800,7 @@ class MLTools(Toolkit):
         import os
         
         # Load data from path
-        X = np.load(x_train_path)
+        X = np.load(x_train_path, allow_pickle=True)
         X = np.asarray(X)
 
         if X.ndim == 1:

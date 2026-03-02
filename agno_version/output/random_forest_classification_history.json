@@ -1,6 +1,6 @@
 {
   "model_type": "RandomForestClassifier",
-  "score": 0.956140350877193,
+  "score": 0.335,
   "score_on": "test",
   "params": {
     "n_estimators": 200,
