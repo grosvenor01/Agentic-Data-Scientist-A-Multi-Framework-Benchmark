@@ -5,3 +5,6 @@
 .env.*.local
 *\__pycache__
 agno_version\__pycache__
+
+__pycache__/
+*.pyc
