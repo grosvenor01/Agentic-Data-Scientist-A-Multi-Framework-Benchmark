@@ -1,0 +1,28 @@
+[project]
+name = "crewai_version"
+version = "0.1.0"
+description = "CrewAi_version using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.9.3",
+    "matplotlib>=3.10.8",
+    "pandas>=2.3.3",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+]
+
+[project.scripts]
+crewai_version = "crewai_version.main:run"
+run_crew = "crewai_version.main:run"
+train = "crewai_version.main:train"
+replay = "crewai_version.main:replay"
+test = "crewai_version.main:test"
+run_with_trigger = "crewai_version.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

@@ -231,9 +231,6 @@ class MLTools(Toolkit):
         Input: paths to training data X, target y, polynomial degree
         Output: trained pipeline model saved to joblib file and training history
         """
-        import os
-        
-        # Setup output directory
         output_dir = "output"
         os.makedirs(output_dir, exist_ok=True)
         
@@ -275,9 +272,6 @@ class MLTools(Toolkit):
         Input: paths to training data X, target y, SVR hyperparameters
         Output: trained SVR pipeline model (with scaling) saved to joblib file and training history
         """
-        import os
-        
-        # Setup output directory
         output_dir = "output"
         os.makedirs(output_dir, exist_ok=True)
         

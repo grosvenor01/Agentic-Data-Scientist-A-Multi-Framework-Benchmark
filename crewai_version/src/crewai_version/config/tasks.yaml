@@ -1,0 +1,73 @@
+analysis_task:
+  description: >
+    Analyze the given dataset at {dataset_path} and produce a detailed report.
+    Include information about column names, data types, missing values, duplicates, date columns,
+    numeric vs categorical features, cardinality, outliers, inconsistencies, and identifier columns.
+  expected_output: >
+    A JSON object containing:
+    {
+      "report": "detailed analysis report here"
+    }
+    The report must cover all aspects of dataset inspection in JSON format without extra text.
+  agent: analysis
+
+preprocessing_task:
+  description: >
+    Preprocess the dataset at {dataset_path} based on the analysis and the task.the target column is {target_column} Using the approprite tools
+    Apply preprocessing steps intelligently :
+    - Drop identifier columns if detected
+    - Handle missing values (median/mode or drop if >50%)
+    - Standardize and extract date features
+    - Clean categorical text
+    - Remove duplicates
+    - Encode categorical features appropriately
+    - Scale numeric features if needed
+    - Handle high-cardinality columns carefully
+    - When there is a script error correct it and re run and not return that a problem happend
+    You should preprocess the dataset and not give the steps on how to do it
+  expected_output: >
+    A JSON object containing:
+    {
+      "report": "detailed preprocessing report and problems encountered",
+      "preprocessed_dataset_path": "<actual saved path>", 
+      "target_column" : "Exact spellingof target column"
+    }
+    The cleaned dataset must be saved to datasets/results/cleaned_<original_name>.csv.
+  agent: preprocessing
+
+training_task:
+  description: >
+    Train baseline models using the preprocessed dataset.
+    You should always run the Dataloader tool (AKA Dataset spliter into train test splits) in order to create train and test splits  
+    Tasks include:
+    - Split the dataset into training and testing based on the provided target column 
+    - Train appropriate baseline models based on the task (regression or classification)
+    - Save all trained models
+  expected_output: >
+    A JSON object containing:
+    {
+      "report": "training report",
+      "trained_model_paths": ["full path 1", "full path 2", "..."],
+      "path_splits_folder": "path to the split folder"
+    }
+    All paths must be real and accurate.
+  agent: training
+
+evaluation_task:
+  description: >
+    Evaluate trained models using the provided test splits.
+    Tasks include:
+    - Load the trained model(s) from model_path
+    - Load the test data from path_splits_folder
+    - Automatically detect task type (regression or classification)
+    - Compute appropriate metrics:
+      - Classification: Accuracy, F1, Precision, Recall
+      - Regression: MAE, RMSE, R2
+    - Provide a concise performance summary
+  expected_output: >
+    A JSON object containing:
+    {
+      "report": "evaluation report here"
+    }
+    Only evaluate using the exact received paths. Do not retrain.
+  agent: evaluation

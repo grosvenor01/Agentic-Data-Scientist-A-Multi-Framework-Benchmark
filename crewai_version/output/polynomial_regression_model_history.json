@@ -1,0 +1,6 @@
+{
+  "model_type": "PolynomialRegression",
+  "score": 0.5065607038807344,
+  "degree": 2,
+  "include_bias": true
+}
